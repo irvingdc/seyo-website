@@ -9,18 +9,18 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cache`,
-    `gatsby-plugin-sitemap`,
-    {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        host: "https://www.seyo.mx",
-        sitemap: "https://www.seyo.mx/sitemap.xml",
-        policy:
-          process.env.GATSBY_ACTIVE_ENV === "QA"
-            ? [{ userAgent: "*", disallow: ["/"] }]
-            : [{ userAgent: "*", allow: "/" }]
-      }
-    },
+    // `gatsby-plugin-sitemap`,
+    // {
+    //   resolve: "gatsby-plugin-robots-txt",
+    //   options: {
+    //     host: "https://www.seyo.mx",
+    //     sitemap: "https://www.seyo.mx/sitemap.xml",
+    //     policy:
+    //       process.env.GATSBY_ACTIVE_ENV === "QA"
+    //         ? [{ userAgent: "*", disallow: ["/"] }]
+    //         : [{ userAgent: "*", allow: "/" }]
+    //   }
+    // },
     // {
     //   resolve: `gatsby-plugin-google-analytics`,
     //   options: {
