@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+:root {
+  --primary: #008fc7;
+  --secondary: #3d4246;
+}
+
+@font-face {
+  font-family: "Calibri";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Calibri.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Calibri";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/CalibriBold.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Calibri";
+  font-style: italic;
+  font-weight: normal;
+  src: url("../fonts/CalibriItalic.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Calibri";
+  font-style: italic;
+  font-weight: bold;
+  src: url("../fonts/CalibriBoldItalic.woff") format("woff");
+  font-display: swap;
+}
+body,
+html {
+  background: white;
+  font-family: "Calibri", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:hover {
+  color: #008fc7 !important;
+  text-decoration: none !important;
+  font-weight: 300;
+}
+:global {
+  .small-button-white-pill,
+  .small-button-blue-pill {
+    width: 130px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: var(--secondary);
+    margin: 0px auto 16px;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .small-button-blue-pill {
+    background-color: #008fc7;
+    color: white;
+  }
+  .carousel-control-next,
+  .carousel-control-prev {
+    z-index: 100 !important;
+  }
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    width: 35px !important;
+    height: 35px !important;
+  }
+  .carousel-control-next-icon {
+    right: -20px;
+  }
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #3d4246 !important;
+  font-weight: 300 !important;
+  margin: 0 !important;
+}
+h2 > b,
+h3 > b,
+h4 > b {
+  color: #008fc7 !important;
+}

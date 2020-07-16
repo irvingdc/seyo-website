@@ -1,0 +1,122 @@
+.container {
+  text-align: center;
+  margin-bottom: -50px;
+  .contentLeft {
+    margin: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    width: 750px;
+    > img {
+      height: 450px;
+      display: block;
+      z-index: 40;
+    }
+    .text {
+      position: absolute;
+      left: 100px;
+      top: 100px;
+text-align: left;
+      > div:first-child {
+        position: absolute;
+        top: -12px;
+        padding-left: 80px;
+        h2 {
+          font-weight: 700 !important;
+        }
+        h3 {
+          font-size: 18px;
+          font-weight: 400 !important;
+          color: #008fc7 !important;
+        }
+      }
+      > div:nth-child(2) {
+        position: absolute;
+        right: 13px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        top: 6px;
+        .price {
+          background: #0a73be;
+          padding: 0px 12px;
+          color: white;
+          font-size: 24px;
+          font-weight: 800;
+        }
+        .button {
+          cursor: pointer;
+          padding-right: 10px;
+          position: relative;
+          top: 5px;
+        }
+      }
+      .lines {
+        height: 180px;
+        z-index: 30;
+        width: 100%;
+      }
+    }
+  }
+  .contentRight {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    width: 750px;
+    margin: auto;
+    > img {
+      height: 450px;
+      display: block;
+      z-index: 40;
+    }
+    .text {
+      position: absolute;
+      right: 100px;
+      top: 100px;
+
+      > div:first-child {
+        position: absolute;
+        top: -12px;
+        padding-right: 80px;
+        right: 0px;
+        text-align: right;
+        h2 {
+          font-weight: 700 !important;
+        }
+        h3 {
+          font-size: 18px;
+          font-weight: 400 !important;
+          color: #008fc7 !important;
+        }
+      }
+      > div:nth-child(2) {
+        position: absolute;
+        left: 13px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        top: 6px;
+        .price {
+          background: #0a73be;
+          padding: 0px 12px;
+          color: white;
+          font-size: 24px;
+          font-weight: 800;
+        }
+        .button {
+          cursor: pointer;
+          padding-left: 10px;
+          position: relative;
+          top: 5px;
+        }
+      }
+      .lines {
+        height: 180px;
+        z-index: 30;
+        width: 100%;
+      }
+    }
+  }
+}
