@@ -21,6 +21,17 @@
     }
   }
 
+  button {
+    display: block;
+    border: none;
+    font-weight: 700;
+    background: #078dc8;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 7px;
+    margin: 14px 0px;
+  }
+
   h2,
   h2 b {
     color: black !important;
@@ -64,16 +75,6 @@
         margin-left: 6px;
       }
     }
-    button {
-      display: block;
-      border: none;
-      font-weight: 700;
-      background: #078dc8;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 7px;
-      margin-top: 34px;
-    }
   }
   > img {
     position: absolute;
@@ -93,10 +94,13 @@
   .introText {
     p {
       display: block;
-      margin: 30px auto 60px !important;
+      margin: 30px auto 20px !important;
       b {
         font-weight: 600;
       }
+    }
+    button{
+      margin-bottom: 60px;
     }
   }
   .image {
@@ -234,7 +238,7 @@
   .text {
     padding: 0px 60px;
     h2 {
-      padding: 40px 0px 80px;
+      padding: 40px 0px 40px;
       b {
         font-weight: 600 !important;
       }
@@ -242,6 +246,11 @@
     p {
       display: flex;
       align-items: center;
+      margin-bottom: 20px !important;
+      b{
+        font-weight: 700 !important;
+        color: #0d8dc8;
+      }
       img {
         display: inline-block;
         width: 70px;
@@ -252,7 +261,10 @@
         display: inline-block;
         width: auto;
       }
-      margin-bottom: 40px !important;
+    }
+    div{
+      display: flex;
+      justify-content: center;
     }
   }
 }
@@ -331,6 +343,11 @@
   .textLine3 {
     top: 270px;
     right: 240px;
+  }
+  .center{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
   }
 }
 .contact {

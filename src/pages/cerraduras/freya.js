@@ -92,7 +92,7 @@ export default () => {
           <label>
             Por solo <b>$5,270.00</b>
           </label>
-          <button>Comprar Ahora</button>
+          <button>Comprar</button>
         </div>
         <img src={freya} alt="" id="firstLockImage" />
       </div>
@@ -107,6 +107,7 @@ export default () => {
             cantidad de huellas que necesites desde tu app movil y manten
             siempre el control. <b>Solo tú decides quien puede entrar.</b>
           </p>
+          <button>Comprar</button>
         </div>
         <div className={classes.image}></div>
       </div>
@@ -137,6 +138,7 @@ export default () => {
             <br />
             <b>Tú eliges durante cuanto tiempo son válidos.</b>
           </p>
+          <button>Comprar</button>
         </div>
         <div className={classes.bottomImage}>
           <img src={code_opening_far} alt="" />
@@ -151,19 +153,22 @@ export default () => {
             <p>
               <img src={phone} alt="" />
               <span>
-                Utiliza tu aplicación para aperturar tu cerradura via bluetooth
-                (en un radio de hasta 2 metros) y recibe notificaciónes en
-                tiempo real de sus uso.
+                Utiliza tu aplicación para aperturar tu cerradura via{" "}
+                <b>bluetooth</b> (en un radio de hasta 2 metros) y recibe
+                notificaciónes en tiempo real de sus uso.
               </span>
             </p>
             <p>
               <img src={wifi} alt="" />
               <span>
-                Utiliza conectividad a internet para aperturar tu cerradura
-                inteligente y recibe notificiaciones en tiempo real de su uso en
-                cualquier parte del mundo.
+                Utiliza conectividad a <b>internet</b> para aperturar tu
+                cerradura inteligente y recibe <b>notificaciones</b> en tiempo
+                real de su uso en cualquier parte del mundo.
               </span>
             </p>
+            <div>
+              <button>Comprar</button>
+            </div>
           </div>
         </div>
         <img src={phone_app} alt="" id="phoneImage" />
@@ -189,6 +194,9 @@ export default () => {
             <span></span>
             <h4>Bulón de seguridad</h4>
           </div>
+        </div>
+        <div className={classes.center}>
+          <button>Comprar Ahora</button>
         </div>
       </div>
       <div className={classes.contact}>
