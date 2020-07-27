@@ -18,9 +18,9 @@ export default () => {
     window.firstFloorAnimated = false
     window.messagesAnimated = false
     window.linesAnimated = false
-    let messagesTriggerPoint = getTriggerPoint("message1", 200)
-    let appTriggerPoint = getTriggerPoint("phoneImage", 200)
-    let textLinePoint = getTriggerPoint("textLine1", 200)
+    let messagesTriggerPoint = getTriggerPoint("message1", 100)
+    let appTriggerPoint = getTriggerPoint("phoneImage", -100)
+    let textLinePoint = getTriggerPoint("textLine1", 100)
     window.addEventListener("scroll", _ => {
       let scroll = window.scrollY
       handleAppScroll(appTriggerPoint, scroll)
@@ -50,30 +50,26 @@ export default () => {
   function handleScrollMessages(triggerPoint, scroll) {
     if (scroll > triggerPoint && !window.messagesAnimated) {
       window.messagesAnimated = true
-      setTimeout(() => {
-        document.getElementById("message1").classList.add("messageDisplayed")
-      }, 200)
+      document.getElementById("message1").classList.add("messageDisplayed")
       setTimeout(() => {
         document.getElementById("message2").classList.add("messageDisplayed")
-      }, 1500)
+      }, 1000)
       setTimeout(() => {
         document.getElementById("message3").classList.add("messageDisplayed")
-      }, 2600)
+      }, 2000)
     }
   }
 
   function handleTextLine(triggerPoint, scroll) {
     if (scroll > triggerPoint && !window.linesAnimated) {
       window.linesAnimated = true
-      setTimeout(() => {
-        document.getElementById("textLine1").classList.add("textLineDisplayed")
-      }, 600)
+      document.getElementById("textLine1").classList.add("textLineDisplayed")
       setTimeout(() => {
         document.getElementById("textLine2").classList.add("textLineDisplayed")
-      }, 1800)
+      }, 1000)
       setTimeout(() => {
         document.getElementById("textLine3").classList.add("textLineDisplayed")
-      }, 3000)
+      }, 2000)
     }
   }
 
