@@ -15,12 +15,11 @@ import code from "images/icons/code.png"
 
 export default () => {
   useEffect(() => {
-    window.firstFloorAnimated = false
-    window.messagesAnimated = false
-    window.linesAnimated = false
+    if (typeof window === "undefined") return
     let messagesTriggerPoint = getTriggerPoint("message1", 100)
     let appTriggerPoint = getTriggerPoint("phoneImage", -100)
     let textLinePoint = getTriggerPoint("textLine1", 100)
+    showFirstLock()
     window.addEventListener("scroll", _ => {
       let scroll = window.scrollY
       handleAppScroll(appTriggerPoint, scroll)
@@ -37,20 +36,29 @@ export default () => {
     )
   }
 
+  function showFirstLock() {
+    let list = document.getElementById("firstLockImage").classList
+    if (!list.contains("firstLockDisplayed")) {
+      setTimeout(() => {
+        list.add("firstLockDisplayed")
+      }, 200)
+    }
+  }
+
   function handleAppScroll(triggerPoint, scroll) {
     console.log("handleAppScroll", triggerPoint, scroll)
-    if (scroll > triggerPoint && !window.firstFloorAnimated) {
-      window.firstFloorAnimated = true
+    let list = document.getElementById("phoneImage").classList
+    if (scroll > triggerPoint && !list.contains("phoneImage")) {
       setTimeout(() => {
-        document.getElementById("phoneImage").classList.add("phoneDisplayed")
+        list.add("phoneDisplayed")
       }, 500)
     }
   }
 
   function handleScrollMessages(triggerPoint, scroll) {
-    if (scroll > triggerPoint && !window.messagesAnimated) {
-      window.messagesAnimated = true
-      document.getElementById("message1").classList.add("messageDisplayed")
+    let list = document.getElementById("message1").classList
+    if (scroll > triggerPoint && !list.contains("messageDisplayed")) {
+      list.add("messageDisplayed")
       setTimeout(() => {
         document.getElementById("message2").classList.add("messageDisplayed")
       }, 1000)
@@ -62,7 +70,6 @@ export default () => {
 
   function handleTextLine(triggerPoint, scroll) {
     if (scroll > triggerPoint && !window.linesAnimated) {
-      window.linesAnimated = true
       document.getElementById("textLine1").classList.add("textLineDisplayed")
       setTimeout(() => {
         document.getElementById("textLine2").classList.add("textLineDisplayed")
@@ -87,7 +94,7 @@ export default () => {
           </label>
           <button>Comprar Ahora</button>
         </div>
-        <img src={freya} alt="" />
+        <img src={freya} alt="" id="firstLockImage" />
       </div>
       <div className={classes.fingerPrint}>
         <div className={classes.introText}>
