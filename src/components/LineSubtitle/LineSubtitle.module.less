@@ -1,0 +1,25 @@
+.subtitle {
+  margin: auto;
+  font-weight: 300 !important;
+  width: fit-content;
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  font-size: 2.3rem;
+}
+.subtitle::before,
+.subtitle::after {
+  content: "";
+  display: block;
+  width: calc(50% - 300px);
+  border-bottom: 3px solid #008fc7;
+  height: 0px;
+  position: absolute;
+  left: 0px;
+  top: 23px;
+}
+.subtitle::after {
+  left: unset;
+  right: 0px;
+}

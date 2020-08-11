@@ -15,58 +15,60 @@ import { Link } from "gatsby"
 
 const IndexPage = () => (
   <Layout>
-    <Carousel
-      items={[
-        <LockBanner
-          img={img1}
-          label="Cerradura Inteligente"
-          title="FREYA19"
-          price="$5,270.00"
-          actions={[
-            {
-              title: "CONOCE MÁS",
-              url: "/",
-            },
-            {
-              title: "COMPRA YA",
-              url: "/",
-            },
-          ]}
-        />,
-        <LockBanner
-          img={img2}
-          label="Cerradura Inteligente"
-          title="FREYA19"
-          price="$5,270.00"
-          actions={[
-            {
-              title: "CONOCE MÁS",
-              url: "/",
-            },
-            {
-              title: "COMPRA YA",
-              url: "/",
-            },
-          ]}
-        />,
-        <LockBanner
-          img={img3}
-          label="Cerradura Inteligente"
-          title="FREYA19"
-          price="$5,270.00"
-          actions={[
-            {
-              title: "CONOCE MÁS",
-              url: "/",
-            },
-            {
-              title: "COMPRA YA",
-              url: "/",
-            },
-          ]}
-        />,
-      ]}
-    />
+    <div className={classes.carousel}>
+      <Carousel
+        items={[
+          <LockBanner
+            img={img1}
+            label="Cerradura Inteligente"
+            title="FREYA19"
+            price="$5,270.00"
+            actions={[
+              {
+                title: "CONOCE MÁS",
+                url: "/",
+              },
+              {
+                title: "COMPRA YA",
+                url: "/",
+              },
+            ]}
+          />,
+          <LockBanner
+            img={img2}
+            label="Cerradura Inteligente"
+            title="FREYA19"
+            price="$5,270.00"
+            actions={[
+              {
+                title: "CONOCE MÁS",
+                url: "/",
+              },
+              {
+                title: "COMPRA YA",
+                url: "/",
+              },
+            ]}
+          />,
+          <LockBanner
+            img={img3}
+            label="Cerradura Inteligente"
+            title="FREYA19"
+            price="$5,270.00"
+            actions={[
+              {
+                title: "CONOCE MÁS",
+                url: "/",
+              },
+              {
+                title: "COMPRA YA",
+                url: "/",
+              },
+            ]}
+          />,
+        ]}
+      />
+    </div>
     <div className={classes.locksBanner}>
       <Link to="/cerraduras">
         <div>
