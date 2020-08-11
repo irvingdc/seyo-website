@@ -1,4 +1,4 @@
-const path = require("path");
+const path = require("path")
 
 module.exports = {
   siteMetadata: {
@@ -54,7 +54,8 @@ module.exports = {
         images: path.join(__dirname, "src/images"),
         components: path.join(__dirname, "src/components"),
         stylesheets: path.join(__dirname, "src/stylesheets"),
-      }
+        utils: path.join(__dirname, "src/utils"),
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -71,16 +72,16 @@ module.exports = {
         javascriptEnabled: true,
         modifyVars: {
           "primary-color": "#8dbe40",
-          "link-color": "#1890ff"
-        }
-      }
+          "link-color": "#1890ff",
+        },
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`)
-      }
+        path: path.join(__dirname, `src`, `images`),
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -99,4 +100,3 @@ module.exports = {
     // `gatsby-plugin-offline`,
   ],
 }
-

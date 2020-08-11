@@ -12,7 +12,7 @@ export default () => (
     <ul>
       <li>
         <Link to="/cerraduras">Cerraduras Inteligentes</Link>
-        <Link to="/otros-productos">Otros Productos</Link>
+        {/*<Link to="/otros-productos">Otros Productos</Link>*/}
         <Link to="/accesorios">Accesorios</Link>
         <Link to="/soporte">Soporte</Link>
         <Link to="/comunidad">Comunidad</Link>

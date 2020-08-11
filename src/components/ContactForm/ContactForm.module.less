@@ -1,0 +1,26 @@
+.container{
+    background: whitesmoke;
+    margin-top: 20px;
+    padding: 20px;
+    > div{
+        display: grid;
+        grid-template-columns: 190px calc(100% - 190px);
+        label{
+            text-align: right;
+            padding-right: 20px;
+            color: #008fc7;
+            font-size: 1.1rem;
+        }
+        input, textarea{
+            border: none;
+            padding: 6px;
+        }
+        input{
+            margin-bottom: 20px;
+        }
+        textarea{
+            height: 140px;
+            resize: none;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+export const LOCK_PRICES = {
+  SYN19: 9300,
+  SYF19: 8450,
+  TYR19: 8360,
+  NOT19: 6980,
+  SOL19: 5900,
+  FREYA19: 5270,
+  MIST19: 3580,
+}
+
+export const ACCESORIES_PRICES = {
+  TARJETAS_RF: 90,
+  GATEWAY: 5270,
+}
+
+export const PRICES = {
+  ...ACCESORIES_PRICES,
+  ...LOCK_PRICES,
+}

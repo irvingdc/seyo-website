@@ -1,0 +1,56 @@
+.methods {
+  display: flex;
+  flex-direction: column;
+  > div {
+    width: fit-content;
+    > div {
+      display: flex;
+    }
+  }
+  margin-bottom: -20px;
+  label {
+    width: 100%;
+    color: #008fc7;
+    position: relative;
+    top: 6px;
+    padding-left: 20px;
+  }
+  img {
+    width: 70px;
+  }
+  span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      color: #008fc7 !important;
+    }
+  }
+}
+.left {
+  align-items: flex-end;
+  padding-right: 10px;
+}
+.right {
+  align-items: flex-start;
+  padding-left: 10px;
+}
+.center {
+  align-items: center;
+  > div > div {
+    justify-content: center;
+  }
+}
+.large {
+  label {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  img {
+    width: 90px;
+  }
+  span p {
+    font-size: 1.2rem;
+  }
+}
