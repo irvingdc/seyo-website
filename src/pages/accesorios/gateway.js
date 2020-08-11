@@ -1,7 +1,7 @@
 import React from "react"
 import classes from "stylesheets/singleLock.module.less"
 import "stylesheets/main.module.less"
-import banner from "images/locks/freya/banner.jpg"
+import banner from "images/accesories/gateway/banner.jpg"
 import LockBanner from "components/LockBanner/LockBanner"
 import { getPriceString } from "../../utils/functions"
 import Layout from "components/Layout/Layout"
