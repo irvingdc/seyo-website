@@ -10,10 +10,10 @@ import UnlockMethods from "components/UnlockMethods/UnlockMethods"
 import Resources from "components/Resources/Resources"
 import AccessCardFloor from "components/AccessCardFloor/AccessCardFloor"
 import tarjeta from "images/locks/freya/tarjeta.png"
-
+import { addToCart } from "components/Cart/Cart"
 
 export default () => (
-  <Layout>
+  <Layout productToPurchase="TARJETAS_RF">
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>TARJETAS</h1>
@@ -25,8 +25,8 @@ export default () => (
         darkText
         actions={[
           {
-            title: "COMPRA YA",
-            url: "/",
+            title: "COMPRAR",
+            onClick: () => addToCart("TARJETAS_RF"),
           },
         ]}
       />
@@ -34,11 +34,7 @@ export default () => (
         Tarjetas de <b>acceso</b> por <b>proximidad</b>
       </h2>
       <div className={classes.methods}>
-        <UnlockMethods
-          size="large"
-          methods={["tarjeta"]}
-          direction="center"
-        />
+        <UnlockMethods size="large" methods={["tarjeta"]} direction="center" />
       </div>
       <AccessCardFloor img={tarjeta} />
       <Resources />

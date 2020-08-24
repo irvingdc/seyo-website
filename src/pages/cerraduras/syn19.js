@@ -19,11 +19,12 @@ import CodesFloor from "components/CodesFloor/CodesFloor"
 import AccessCardFloor from "components/AccessCardFloor/AccessCardFloor"
 import Resources from "components/Resources/Resources"
 import KeyFloor from "components/KeyFloor/KeyFloor"
+import { addToCart } from "components/Cart/Cart"
 
 const KEY_NAME = "SYN19"
 
 export default () => (
-  <Layout>
+  <Layout productToPurchase={KEY_NAME}>
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>{KEY_NAME}</h1>
@@ -35,8 +36,8 @@ export default () => (
         darkText
         actions={[
           {
-            title: "COMPRA YA",
-            url: "/",
+            title: "COMPRAR",
+            onClick: () => addToCart(KEY_NAME),
           },
         ]}
       />

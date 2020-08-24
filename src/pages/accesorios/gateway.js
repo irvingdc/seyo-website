@@ -9,11 +9,12 @@ import PreHeader from "components/PreHeader/PreHeader"
 import UnlockMethods from "components/UnlockMethods/UnlockMethods"
 import AppWifiFloor from "components/AppWifiFloor/AppWifiFloor"
 import Resources from "components/Resources/Resources"
+import { addToCart } from "components/Cart/Cart"
 
 const KEY_NAME = "GATEWAY"
 
 export default () => (
-  <Layout>
+  <Layout productToPurchase={KEY_NAME}>
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>{KEY_NAME}</h1>
@@ -25,8 +26,8 @@ export default () => (
         darkText
         actions={[
           {
-            title: "COMPRA YA",
-            url: "/",
+            title: "COMPRAR",
+            onClick: () => addToCart(KEY_NAME),
           },
         ]}
       />

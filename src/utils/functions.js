@@ -1,6 +1,11 @@
 import { LOCK_PRICES, PRICES } from "./prices"
 
-function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
+export function formatMoney(
+  amount,
+  decimalCount = 2,
+  decimal = ".",
+  thousands = ","
+) {
   try {
     decimalCount = Math.abs(decimalCount)
     decimalCount = isNaN(decimalCount) ? 2 : decimalCount
@@ -38,3 +43,10 @@ export const getMinPriceString = () =>
       0
     )
   )
+
+export const countCartItems = () => {
+  let cart = JSON.parse(localStorage.cart || "{}")
+  return Object.keys(cart).reduce((acc, currKey) => {
+    return acc + cart[currKey].amount
+  }, 0)
+}

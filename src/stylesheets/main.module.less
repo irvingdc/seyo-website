@@ -119,6 +119,22 @@ p > b {
 p {
   font-size: 1rem;
 }
+:global {
+  .react-toast-notifications__container {
+    top: 50px !important;
+  }
+}
+
+button {
+  outline: none !important;
+  transition: all 0.3s;
+  filter: brightness(1);
+  cursor: pointer;
+}
+button:hover {
+  filter: brightness(0.8) contrast(1.2);
+}
+
 @media (max-width: 600px) {
   body,
   html {
