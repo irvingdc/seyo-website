@@ -36,6 +36,7 @@ let Cart = () => {
 }
 
 export const addToCart = code => {
+  if (typeof localStorage === "undefined") return
   let cart = JSON.parse(localStorage.cart || "{}")
   let product = cart[code] || { amount: 0 }
   product.amount += 1

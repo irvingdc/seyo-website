@@ -30,6 +30,7 @@ export default () => {
   }, [])
 
   let setOrderFromStorage = () => {
+    if (typeof localStorage === "undefined") return
     let cart = JSON.parse(localStorage.cart || "{}")
     setOrder(
       Object.keys(cart)

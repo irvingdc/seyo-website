@@ -45,6 +45,7 @@ export const getMinPriceString = () =>
   )
 
 export const countCartItems = () => {
+  if (typeof localStorage === "undefined") return
   let cart = JSON.parse(localStorage.cart || "{}")
   return Object.keys(cart).reduce((acc, currKey) => {
     return acc + cart[currKey].amount
