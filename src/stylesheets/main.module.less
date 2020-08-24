@@ -41,6 +41,7 @@ html {
   margin: 0;
   overflow-x: hidden;
   padding: 0;
+  font-size: 15px;
 }
 
 p,
@@ -76,10 +77,12 @@ a:hover {
     border-radius: 50px;
     font-size: 1rem;
     font-weight: 600;
+    box-shadow: 0px 0px 10px 0px gray;
   }
   .small-button-blue-pill {
     background-color: #008fc7;
     color: white;
+    box-shadow: none;
   }
   .carousel-control-next,
   .carousel-control-prev {
@@ -115,4 +118,10 @@ p > b {
 
 p {
   font-size: 1rem;
+}
+@media (max-width: 600px) {
+  body,
+  html {
+    font-size: 13.5px;
+  }
 }

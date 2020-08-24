@@ -8,10 +8,18 @@ import video from "images/support/video.jpg"
 export default () => (
   <div className={classes.container}>
     <div className={classes.flex2}>
-      <img src={manual} alt="manual" />
-      <img src={plantillas} alt="plantillas" />
-      <img src={app} alt="app" />
-      <img src={video} alt="video" />
+      <a rel="noopener noreferrer" href="#" target="_blank">
+        <img src={manual} alt="manual" />
+      </a>
+      <a rel="noopener noreferrer" href="#" target="_blank">
+        <img src={plantillas} alt="plantillas" />
+      </a>
+      <a rel="noopener noreferrer" href="#" target="_blank">
+        <img src={app} alt="app" />
+      </a>
+      <a rel="noopener noreferrer" href="#" target="_blank">
+        <img src={video} alt="video" />
+      </a>
     </div>
   </div>
 )

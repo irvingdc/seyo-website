@@ -4,7 +4,11 @@
   > div {
     width: fit-content;
     > div {
-      display: flex;
+      display: block;
+      max-width: calc(100vw - 362px);
+      div {
+        display: inline-block;
+      }
     }
   }
   margin-bottom: -20px;
@@ -30,13 +34,16 @@
 .left {
   align-items: flex-end;
   padding-right: 10px;
+  text-align: left;
 }
 .right {
   align-items: flex-start;
   padding-left: 10px;
+  text-align: left;
 }
 .center {
   align-items: center;
+  text-align: center;
   > div > div {
     justify-content: center;
   }
@@ -52,5 +59,28 @@
   }
   span p {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .methods {
+    > div {
+      > div {
+        max-width: unset !important;
+        text-align: center;
+      }
+      label {
+        text-align: center;
+        padding-bottom: 18px;
+      }
+      img {
+        width: 60px;
+        margin: 3px;
+      }
+      span p {
+        font-size: 0.8rem !important;
+        font-weight: 500 !important;
+      }
+    }
   }
 }

@@ -7,15 +7,17 @@ import { Link } from "gatsby"
 
 let Text = ({ title, price, lineImg, methods, direction, link, subtitle }) => (
   <div className={classes.text}>
-    <div>
-      <h3>{subtitle ? subtitle : "CERRADURA INTELIGENTE"}</h3>
-      <h2>{title}</h2>
-      <Link to={link}>VER DETALLES</Link>
+    <div className={classes.actions}>
+      <div>
+        <h3>{subtitle ? subtitle : "CERRADURA INTELIGENTE"}</h3>
+        <h2>{title}</h2>
+      </div>
+      <div>
+        <span className={classes.price}>{price}</span>
+        <Link to={link}>VER DETALLES</Link>
+      </div>
+      <img src={lineImg} alt="" className={classes.lines} />
     </div>
-    <div>
-      <span className={classes.price}>{price}</span>
-    </div>
-    <img src={lineImg} alt="" className={classes.lines} />
     <UnlockMethods methods={methods} direction={direction} />
   </div>
 )

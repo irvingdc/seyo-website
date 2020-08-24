@@ -1,26 +1,46 @@
-.container{
-    background: whitesmoke;
-    margin-top: 20px;
-    padding: 20px;
-    > div{
-        display: grid;
-        grid-template-columns: 190px calc(100% - 190px);
-        label{
-            text-align: right;
-            padding-right: 20px;
-            color: #008fc7;
-            font-size: 1.1rem;
-        }
-        input, textarea{
-            border: none;
-            padding: 6px;
-        }
-        input{
-            margin-bottom: 20px;
-        }
-        textarea{
-            height: 140px;
-            resize: none;
-        }
+.container {
+  background: whitesmoke;
+  margin-top: 20px;
+  padding: 20px;
+  > div {
+    display: grid;
+    grid-template-columns: 170px calc(100% - 170px);
+    label {
+      text-align: right;
+      padding-right: 16px;
+      color: #008fc7;
+      font-size: 1.1rem;
     }
+    input,
+    textarea {
+      border: none;
+      padding: 6px;
+    }
+    input {
+      margin-bottom: 20px;
+    }
+    textarea {
+      height: 140px;
+      resize: none;
+    }
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px 0px;
+    button {
+      box-shadow: none;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    > div {
+      display: flex;
+      flex-direction: column;
+      label {
+        text-align: left;
+      }
+    }
+  }
 }

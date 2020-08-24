@@ -2,22 +2,31 @@ import React from "react"
 import classes from "./ContactForm.module.less"
 
 export default () => (
-  <div className={classes.container}>
+  <form
+    className={classes.container}
+    data-netlify="true"
+    method="POST"
+    name="contacto"
+  >
+    <input type="hidden" name="form-name" value="contacto" />
     <div>
-      <label>Correo Electrónico:</label>
-      <input type="text" />
+      <label for="Correo">Correo Electrónico:</label>
+      <input type="email" name="Correo" id="Correo" required />
     </div>
     <div>
-      <label>Nombre:</label>
-      <input type="text" />
+      <label for="Nombre">Nombre:</label>
+      <input type="text" name="Nombre" id="Nombre" required />
     </div>
     <div>
-      <label>Teléfono:</label>
-      <input type="text" />
+      <label for="Telefono">Teléfono:</label>
+      <input type="number" name="Telefono" id="Telefono" required />
     </div>
     <div>
-      <label>Mensaje:</label>
-      <textarea></textarea>
+      <label for="Mensaje">Mensaje:</label>
+      <textarea name="Mensaje" id="Mensaje" required></textarea>
     </div>
-  </div>
+    <div className={classes.button}>
+      <button className="small-button-blue-pill">ENVIAR</button>
+    </div>
+  </form>
 )

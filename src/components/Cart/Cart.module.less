@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  padding: 15px;
+  padding: 10px;
   .icon {
     width: 30px;
     height: auto;
@@ -11,5 +11,16 @@
   .hoverContent {
     position: absolute;
     display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    position: fixed;
+    right: 50px;
+    top: 0px;
+    .icon {
+      width: 28px;
+    }
   }
 }

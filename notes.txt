@@ -1,7 +1,2 @@
-- los assets de SYN19 no tienen las lineas, cuadrados e iconos
-- el banner de syf19 no esta en la carpeta compartida
-- la pagina de cerraduras no tiene todas las cerraduras que venden (mist20, ull & vali), van en otra pagina?
+- la pagina de cerraduras no tiene todas las cerraduras que encontre en una carpeta de fotos de cerraduras (mist20, ull & vali), van en otra pagina o esas no se incluirian?
 - faltan las imagenes individuales de mist20, ull & vali
-- las carpetas de "otros productos" estan vacias
-- el banner de comunidad no deberia tener el texto como parte de la imagen
-- el banner de la pagina de distribuidores no deberia tener el boton azul como parte de la imagen

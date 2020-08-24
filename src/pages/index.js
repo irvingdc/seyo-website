@@ -9,8 +9,9 @@ import img1 from "images/banners/freya_home.jpg"
 import img2 from "images/banners/not_home.jpg"
 import img3 from "images/banners/syn_home.jpg"
 import otros_productos from "images/banners/otros_productos.png"
-import locks_all from "images/banners/locks_all.jpg"
+import locks_all from "images/banners/locks_all_cropped.jpg"
 import classes from "stylesheets/index.module.less"
+import { getPriceString } from "utils/functions"
 import { Link } from "gatsby"
 
 const IndexPage = () => (
@@ -22,11 +23,11 @@ const IndexPage = () => (
             img={img1}
             label="Cerradura Inteligente"
             title="FREYA19"
-            price="$5,270.00"
+            price={getPriceString("FREYA19")}
             actions={[
               {
                 title: "CONOCE MÁS",
-                url: "/",
+                url: "/cerraduras/freya19",
               },
               {
                 title: "COMPRA YA",
@@ -37,12 +38,12 @@ const IndexPage = () => (
           <LockBanner
             img={img2}
             label="Cerradura Inteligente"
-            title="FREYA19"
-            price="$5,270.00"
+            title="NOT19"
+            price={getPriceString("NOT19")}
             actions={[
               {
                 title: "CONOCE MÁS",
-                url: "/",
+                url: "/cerraduras/not19",
               },
               {
                 title: "COMPRA YA",
@@ -53,12 +54,12 @@ const IndexPage = () => (
           <LockBanner
             img={img3}
             label="Cerradura Inteligente"
-            title="FREYA19"
-            price="$5,270.00"
+            title="SYN19"
+            price={getPriceString("SYN19")}
             actions={[
               {
                 title: "CONOCE MÁS",
-                url: "/",
+                url: "/cerraduras/syn19",
               },
               {
                 title: "COMPRA YA",
@@ -85,7 +86,7 @@ const IndexPage = () => (
     <HomeLocks />
     <LockBanner
       img={otros_productos}
-      title="Accesorios"
+      title={<span className={classes.finalSubtitle}>Accesorios</span>}
       darkText
       price={
         <Fragment>
@@ -95,7 +96,7 @@ const IndexPage = () => (
       actions={[
         {
           title: "CONOCE MÁS",
-          url: "/",
+          url: "/accesorios",
           blue: true,
         },
       ]}

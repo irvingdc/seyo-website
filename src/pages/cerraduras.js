@@ -1,4 +1,4 @@
-import React from "react"
+  import React from "react"
 import "stylesheets/main.module.less"
 import classes from "stylesheets/locks.module.less"
 import Layout from "components/Layout/Layout"
@@ -77,8 +77,8 @@ export default () => (
         <LockCard
           link="/cerraduras/freya19"
           direction="right"
-          title="FREYA19"
           img={freya}
+          title="FREYA19"
           price={getPriceString("FREYA19")}
           methods={["wifi", "app", "codigo", "llave", "tarjeta"]}
         />

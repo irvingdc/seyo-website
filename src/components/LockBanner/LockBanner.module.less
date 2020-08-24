@@ -11,7 +11,7 @@
     flex-direction: column;
     align-items: center;
   }
-  .reverse{
+  .reverse {
     left: 0%;
   }
   h2,
@@ -46,5 +46,17 @@
     object-fit: cover;
     object-position: center;
     z-index: 1;
+  }
+}
+@media (max-width: 660px) {
+  .container {
+    height: 330px;
+    .content {
+      left: 45%;
+      width: 50%;
+    }
+    img {
+      filter: opacity(0.6);
+    }
   }
 }

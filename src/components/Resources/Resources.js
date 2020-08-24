@@ -10,7 +10,6 @@ export default ({ hideVideo }) => (
     <h4>
       Recursos para <b>instalación</b>
     </h4>
-    {!hideVideo ? <img src={videoPreview} alt="video" /> : null}
     <div className={classes.flex}>
       <img src={manual} alt="manual" />
       <img src={plantillas} alt="plantillas" />
