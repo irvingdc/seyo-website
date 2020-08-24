@@ -163,13 +163,13 @@ export default () => {
             options={{
               clientId: CLIENT_ID,
               currency: "MXN",
-              buyerCountry: "MX",
             }}
             style={{
-              layout: "horizontal",
+              layout: "vertical",
               color: "blue",
               shape: "rect",
-              label: "paypal",
+              label: "pay",
+              false: false,
             }}
           />
           {console.log("CLIENT_ID", CLIENT_ID)}
