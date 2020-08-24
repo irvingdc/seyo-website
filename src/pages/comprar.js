@@ -10,6 +10,17 @@ import plus from "images/add.svg"
 import minus from "images/substract.svg"
 import bin from "images/bin.svg"
 import { Link } from "gatsby"
+import { PayPalButton } from "react-paypal-button-v2"
+
+const CLIENT = {
+  sandbox:
+    "ATtCcMdOrupEBVxY8Wn3CaNzmswgnasFD9vZTMPu0hq--FBPfC-juTzFe2eOCwL3KKhF8ooRRar523Pp",
+  production:
+    "AYXOqRUfWU1KrAknRKBYJxhboFTgLrhhaSg-0ExoPcE7grLqlEaEDAqetDzaf0ury9Ht8U8bsTuIU3ie",
+}
+
+const CLIENT_ID =
+  process.env.GATSBY_ENV === "PRODUCTION" ? CLIENT.production : CLIENT.sandbox
 
 export default () => {
   let [order, setOrder] = useState([])
@@ -122,7 +133,6 @@ export default () => {
       render: (_, { amount, price }) => "$" + formatMoney(amount * price),
     },
   ]
-  console.log("order", order)
 
   return (
     <Layout>
@@ -139,6 +149,31 @@ export default () => {
           <span>Total:</span>
           <b>{"$" + formatMoney(calculateTotal())}</b>
         </h3>
+        <div className={classes.paypal}>
+          <PayPalButton
+            amount="0.01"
+            onSuccess={(details, data) => {
+              alert("Transaction completed by " + details.payer.name.given_name)
+              console.log("data", data)
+              console.log("details", details)
+            }}
+            onError={error => {
+              console.log("error", error)
+            }}
+            options={{
+              clientId: CLIENT_ID,
+              currency: "MXN",
+              buyerCountry: "MX",
+            }}
+            style={{
+              layout: "horizontal",
+              color: "blue",
+              shape: "rect",
+              label: "paypal",
+            }}
+          />
+          {console.log("CLIENT_ID", CLIENT_ID)}
+        </div>
       </div>
     </Layout>
   )
