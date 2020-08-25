@@ -192,10 +192,23 @@ export default () => {
       <form
         data-netlify="true"
         className={classes.container}
-        action="/orden-completada"
+        action="/"
         method="POST"
         name="orden-completada"
       >
+        <input type="hidden" name="Direccion" value="" />
+        <input type="hidden" name="Colonia" value="" />
+        <input type="hidden" name="Estado" value="" />
+        <input type="hidden" name="Ciudad" value="" />
+        <input type="hidden" name="Pais" value="" />
+        <input type="hidden" name="Codigo Postal" value="" />
+        <input type="hidden" name="Nombre" value="" />
+        <input type="hidden" name="Total Pagado" value="" />
+        <input type="hidden" name="Cadena de detalles de PayPal" value="" />
+        <input type="hidden" name="Productos" value="" />
+        <input type="hidden" name="ID de la orden" value="" />
+        <input type="hidden" name="Email" value="" />
+        <input type="hidden" name="form-name" value="orden-completada" />
         {!loading ? (
           <>
             <PreHeader type="h2" />
