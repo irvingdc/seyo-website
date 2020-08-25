@@ -161,16 +161,16 @@ export default () => {
         Ciudad: address.admin_area_2,
         Pais: address.country_code,
         "Codigo Postal": address.postal_code,
-        Nombre: address.full_name,
+        Nombre: units[0].shipping.name.full_name,
         "Total Pagado": `${units[0].amount.value} ${units[0].amount.currency_code}`,
         "Cadena de detalles de PayPal": stringDetails,
       }
     }
     try {
-      fetch("/orden-completada", {
+      fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
+        body: JSON.stringify({
           "form-name": "orden-completada",
           Productos: stringifyProducts(),
           "ID de la orden": orderID,
@@ -192,7 +192,7 @@ export default () => {
       <form
         data-netlify="true"
         className={classes.container}
-        action="/"
+        action="/orden-completada"
         method="POST"
         name="orden-completada"
       >
