@@ -24,6 +24,7 @@ const CLIENT_ID =
 
 export default () => {
   let [order, setOrder] = useState([])
+  let [loading, setLoading] = useState(false)
 
   useEffect(() => {
     setOrderFromStorage()
@@ -191,12 +192,16 @@ export default () => {
       <form
         data-netlify="true"
         className={classes.container}
-        action="/orden-completada"
+        action="/"
         method="POST"
         name="orden-completada"
       >
-        <PreHeader type="h2" />
-        <h1>CARRITO DE COMPRAS</h1>
+        {!loading ? (
+          <>
+            <PreHeader type="h2" />
+            <h1>CARRITO DE COMPRAS</h1>
+          </>
+        ) : null}
         {!order.length ? (
           <p className={classes.empty}>
             <span>Tu carrito está vacio.</span>
@@ -204,40 +209,45 @@ export default () => {
           </p>
         ) : (
           <>
-            <Table
-              dataSource={order}
-              columns={columns}
-              rowKey="code"
-              className={classes.largeTable}
-            />
-            <h3 className={classes.total}>
-              <span>Total:</span>
-              <b>{"$" + formatMoney(calculateTotal())}</b>
-            </h3>
-            <div className={classes.paypal}>
-              <PayPalButton
-                amount="0.01"
-                onSuccess={(details, data) => {
-                  console.log("data", data)
-                  console.log("details", details)
-                  submitPurchase(data.orderID, details)
-                }}
-                onError={error => {
-                  console.log("error", error)
-                }}
-                options={{
-                  clientId: CLIENT_ID,
-                  currency: "MXN",
-                }}
-                style={{
-                  layout: "vertical",
-                  color: "blue",
-                  shape: "rect",
-                  label: "pay",
-                  false: false,
-                }}
-              />
-            </div>
+            {loading ? (
+              <div className={classes.spinner}></div>
+            ) : (
+              <>
+                <Table
+                  dataSource={order}
+                  columns={columns}
+                  rowKey="code"
+                  className={classes.largeTable}
+                />
+                <h3 className={classes.total}>
+                  <span>Total:</span>
+                  <b>{"$" + formatMoney(calculateTotal())}</b>
+                </h3>
+                <div className={classes.paypal}>
+                  <PayPalButton
+                    amount="0.01"
+                    onSuccess={(details, data) => {
+                      setLoading(true)
+                      submitPurchase(data.orderID, details)
+                    }}
+                    onError={error => {
+                      console.log("error", error)
+                    }}
+                    options={{
+                      clientId: CLIENT_ID,
+                      currency: "MXN",
+                    }}
+                    style={{
+                      layout: "vertical",
+                      color: "blue",
+                      shape: "rect",
+                      label: "pay",
+                      false: false,
+                    }}
+                  />
+                </div>
+              </>
+            )}
           </>
         )}
       </form>
