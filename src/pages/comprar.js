@@ -135,9 +135,66 @@ export default () => {
     },
   ]
 
+  let encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  let stringifyProducts = () => {
+    return order.map(it => `${it.name} (${it.amount})`).join(", ")
+  }
+
+  let submitPurchase = (orderID, details) => {
+    if (typeof window === "undefined") return
+    let stringDetails = JSON.stringify(details)
+    console.log("stringDetails", stringDetails)
+    let units = details.purchase_units
+    let direccion = {}
+    if (units.length) {
+      let address = units[0].shipping.address
+      direccion = {
+        Direccion: address.address_line_1,
+        Colonia: address.address_line_2,
+        Estado: address.admin_area_1,
+        Ciudad: address.admin_area_2,
+        Pais: address.country_code,
+        "Codigo Postal": address.postal_code,
+        Nombre: address.full_name,
+        "Total Pagado": `${units[0].amount.value} ${units[0].amount.currency_code}`,
+        "Cadena de detalles de PayPal": stringDetails,
+      }
+    }
+    try {
+      fetch("/orden-completada", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "orden-completada",
+          Productos: stringifyProducts(),
+          "ID de la orden": orderID,
+          Email: details.payer.email_address,
+          ...direccion,
+        }),
+      })
+        .then(() => window.location.replace("/orden-completada"))
+        .catch(error => console.log("NETLIFY ERROR 1:", error))
+    } catch (error) {
+      console.log("NETLIFY ERROR 2:", error)
+    }
+  }
+
+  console.log("stringifyProducts", stringifyProducts())
+
   return (
     <Layout>
-      <div className={classes.container}>
+      <form
+        data-netlify="true"
+        className={classes.container}
+        action="/orden-completada"
+        method="POST"
+        name="orden-completada"
+      >
         <PreHeader type="h2" />
         <h1>CARRITO DE COMPRAS</h1>
         {!order.length ? (
@@ -161,11 +218,9 @@ export default () => {
               <PayPalButton
                 amount="0.01"
                 onSuccess={(details, data) => {
-                  alert(
-                    "Transaction completed by " + details.payer.name.given_name
-                  )
                   console.log("data", data)
                   console.log("details", details)
+                  submitPurchase(data.orderID, details)
                 }}
                 onError={error => {
                   console.log("error", error)
@@ -182,11 +237,10 @@ export default () => {
                   false: false,
                 }}
               />
-              {console.log("CLIENT_ID", CLIENT_ID)}
             </div>
           </>
         )}
-      </div>
+      </form>
     </Layout>
   )
 }
