@@ -12,6 +12,8 @@ import bin from "images/bin.svg"
 import { Link } from "gatsby"
 import { PayPalButton } from "react-paypal-button-v2"
 
+var EventBus = require("eventbusjs")
+
 const CLIENT = {
   sandbox:
     "ATtCcMdOrupEBVxY8Wn3CaNzmswgnasFD9vZTMPu0hq--FBPfC-juTzFe2eOCwL3KKhF8ooRRar523Pp",
@@ -57,6 +59,7 @@ export default () => {
     let cart = JSON.parse(localStorage.cart)
     cart[code].amount = newValue
     localStorage.cart = JSON.stringify(cart)
+    EventBus.dispatch("rerender_cart")
   }
 
   let reduceAmount = code => {
@@ -64,6 +67,12 @@ export default () => {
     let newOrder = order.map(it => ({ ...it }))
     let newValue = newOrder[index].amount - 1
     setNewProductAmount(newOrder, newValue, code, index)
+    EventBus.dispatch(
+      "show_toast",
+      null,
+      "Se ha removido el producto.",
+      "success"
+    )
   }
 
   let increaseAmount = code => {
@@ -71,6 +80,12 @@ export default () => {
     let newOrder = order.map(it => ({ ...it }))
     let newValue = newOrder[index].amount + 1
     setNewProductAmount(newOrder, newValue, code, index)
+    EventBus.dispatch(
+      "show_toast",
+      null,
+      "Se ha agregado el producto.",
+      "success"
+    )
   }
 
   let removeProduct = code => {
@@ -78,6 +93,12 @@ export default () => {
     let newOrder = order.map(it => ({ ...it }))
     let newValue = 0
     setNewProductAmount(newOrder, newValue, code, index)
+    EventBus.dispatch(
+      "show_toast",
+      null,
+      "Se ha removido el producto.",
+      "success"
+    )
   }
 
   let calculateTotal = () =>
@@ -146,6 +167,25 @@ export default () => {
     return order.map(it => `${it.name} (${it.amount})`).join(", ")
   }
 
+  let sendErrorMessage = stringDetails => {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "Cadena de detalles de PayPal": stringDetails,
+      }),
+    })
+      .then(() => window.location.replace("/orden-completada"))
+      .catch(error => {
+        EventBus.dispatch(
+          "show_toast",
+          null,
+          "Se ha producido un error. Tu pago está seguro pero es necesario te pongas en contacto con mexico@swedishnet.mx",
+          "error"
+        )
+      })
+  }
+
   let submitPurchase = (orderID, details) => {
     if (typeof window === "undefined") return
     let stringDetails = JSON.stringify(details)
@@ -179,14 +219,18 @@ export default () => {
         }),
       })
         .then(() => window.location.replace("/orden-completada"))
-        .catch(error => console.log("NETLIFY ERROR 1:", error))
+        .catch(error => {
+          sendErrorMessage(stringDetails)
+        })
     } catch (error) {
-      console.log("NETLIFY ERROR 2:", error)
+      sendErrorMessage(stringDetails)
     }
   }
 
   let clearCart = () => {
-    
+    localStorage.cart = "{}"
+    setOrder([])
+    EventBus.dispatch("rerender_cart")
   }
 
   return (
@@ -198,19 +242,19 @@ export default () => {
         method="POST"
         name="orden-completada"
       >
+        <input type="hidden" name="ID de la orden" value="" />
+        <input type="hidden" name="Productos" value="" />
+        <input type="hidden" name="Total Pagado" value="" />
+        <input type="hidden" name="Nombre" value="" />
+        <input type="hidden" name="Email" value="" />
         <input type="hidden" name="Direccion" value="" />
         <input type="hidden" name="Colonia" value="" />
         <input type="hidden" name="Estado" value="" />
         <input type="hidden" name="Ciudad" value="" />
         <input type="hidden" name="Pais" value="" />
         <input type="hidden" name="Codigo Postal" value="" />
-        <input type="hidden" name="Nombre" value="" />
-        <input type="hidden" name="Total Pagado" value="" />
-        <input type="hidden" name="Cadena de detalles de PayPal" value="" />
-        <input type="hidden" name="Productos" value="" />
-        <input type="hidden" name="ID de la orden" value="" />
-        <input type="hidden" name="Email" value="" />
         <input type="hidden" name="form-name" value="orden-completada" />
+        <input type="hidden" name="Cadena de detalles de PayPal" value="" />
         {!loading ? (
           <>
             <PreHeader type="h2" />
@@ -240,7 +284,7 @@ export default () => {
                 </h3>
                 <div className={classes.paypal}>
                   <PayPalButton
-                    amount="0.01"
+                    amount={calculateTotal()}
                     onSuccess={(details, data) => {
                       setLoading(true)
                       clearCart()

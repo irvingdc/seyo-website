@@ -14,10 +14,10 @@ let Cart = () => {
     EventBus.addEventListener("rerender_cart", () => {
       setCartCount(countCartItems())
     })
-    EventBus.addEventListener("show_toast", (_, message) => {
+    EventBus.addEventListener("show_toast", (_, message, type) => {
       addToast(message, {
-        appearance: "success",
-        autoDismiss: true,
+        appearance: type,
+        autoDismiss: type !== "error",
       })
     })
   }, [])
@@ -46,7 +46,8 @@ export const addToCart = code => {
   EventBus.dispatch(
     "show_toast",
     null,
-    "El producto se ha agregado al carrito."
+    "El producto se ha agregado al carrito.",
+    "success"
   )
 }
 

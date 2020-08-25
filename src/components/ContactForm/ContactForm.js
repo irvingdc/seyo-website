@@ -7,6 +7,7 @@ export default () => (
     data-netlify="true"
     method="POST"
     name="contacto"
+    target="/mensaje-enviado/"
   >
     <input type="hidden" name="form-name" value="contacto" />
     <div>
