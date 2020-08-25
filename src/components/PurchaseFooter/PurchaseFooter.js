@@ -8,7 +8,7 @@ export default ({ productToPurchase }) => {
   useEffect(() => {
     if (typeof window !== undefined) {
       window.addEventListener("scroll", e => {
-        if (window.scrollY > 300) {
+        if (window.scrollY > 100) {
           setScrolled(true)
         } else {
           setScrolled(false)
