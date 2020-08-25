@@ -13,17 +13,20 @@ export default () => (
     <LockCard
       direction="right"
       title="SYF19"
+      link="/cerraduras/syf19"
       img={syf}
       price={getPriceString("SYF19")}
     />
     <LockCard
       direction="left"
+      link="/cerraduras/tyr19"
       title="TYR19"
       img={tyr}
       price={getPriceString("TYR19")}
     />
     <LockCard
       direction="right"
+      link="/cerraduras/not19"
       title="NOT19"
       img={not}
       price={getPriceString("NOT19")}
