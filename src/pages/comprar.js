@@ -170,7 +170,7 @@ export default () => {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: JSON.stringify({
+        body: encode({
           "form-name": "orden-completada",
           Productos: stringifyProducts(),
           "ID de la orden": orderID,
@@ -185,7 +185,9 @@ export default () => {
     }
   }
 
-  console.log("stringifyProducts", stringifyProducts())
+  let clearCart = () => {
+    
+  }
 
   return (
     <Layout>
@@ -241,6 +243,7 @@ export default () => {
                     amount="0.01"
                     onSuccess={(details, data) => {
                       setLoading(true)
+                      clearCart()
                       submitPurchase(data.orderID, details)
                     }}
                     onError={error => {
