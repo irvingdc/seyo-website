@@ -25,8 +25,8 @@ export default ({ methods, direction, size }) => {
       <div>
         <label>MÉTODOS DE APERTURA</label>
         <div>
-          {methods.map(method => (
-            <div>
+          {methods.map((method, index) => (
+            <div key={index}>
               <span>
                 <img src={ICONS[method]} alt="icono" />
                 <p>{method.toUpperCase()}</p>

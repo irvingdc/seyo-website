@@ -15,10 +15,6 @@ export default () => (
       <img src={banner} alt="Banner" />
       <div className={classes.text}>
         <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-          nonummy nibh euis- mod tincidunt ut laoreet dolore magna aliquam erat
-          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
         </p>
       </div>
       <h5>RECURSOS</h5>

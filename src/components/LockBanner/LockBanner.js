@@ -25,9 +25,9 @@ export default ({
       <h4>{price}</h4>
       <div className={classes.buttons}>
         {!!actions &&
-          actions.map(it =>
+          actions.map((it, index) =>
             it.url ? (
-              <Link to={it.url}>
+              <Link to={it.url} key={index}>
                 <button
                   className={
                     it.blue
@@ -40,6 +40,7 @@ export default ({
               </Link>
             ) : (
               <button
+                key={index}
                 className={
                   it.blue ? "small-button-blue-pill" : "small-button-white-pill"
                 }

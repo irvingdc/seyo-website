@@ -11,19 +11,19 @@ export default () => (
   >
     <input type="hidden" name="form-name" value="contacto" />
     <div>
-      <label for="Correo">Correo Electrónico:</label>
+      <label htmlFor="Correo">Correo Electrónico:</label>
       <input type="email" name="Correo" id="Correo" required />
     </div>
     <div>
-      <label for="Nombre">Nombre:</label>
+      <label htmlFor="Nombre">Nombre:</label>
       <input type="text" name="Nombre" id="Nombre" required />
     </div>
     <div>
-      <label for="Telefono">Teléfono:</label>
+      <label htmlFor="Telefono">Teléfono:</label>
       <input type="number" name="Telefono" id="Telefono" required />
     </div>
     <div>
-      <label for="Mensaje">Mensaje:</label>
+      <label htmlFor="Mensaje">Mensaje:</label>
       <textarea name="Mensaje" id="Mensaje" required></textarea>
     </div>
     <div className={classes.button}>

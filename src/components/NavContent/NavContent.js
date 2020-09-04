@@ -20,7 +20,7 @@ export default () => {
           <Link to="/cerraduras">Cerraduras Inteligentes</Link>
         </li>
         <li>
-          <Link to="/accesorios">Accesorios</Link>
+          <Link to="/otros-productos">Otros Productos</Link>
         </li>
         <li>
           <Link to="/soporte">Soporte</Link>

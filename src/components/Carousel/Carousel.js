@@ -4,8 +4,8 @@ import Carousel from "react-bootstrap/Carousel"
 export default ({ items }) => (
   <div>
     <Carousel>
-      {items.map(it => (
-        <Carousel.Item>{it}</Carousel.Item>
+      {items.map((it, index) => (
+        <Carousel.Item key={index}>{it}</Carousel.Item>
       ))}
     </Carousel>
   </div>

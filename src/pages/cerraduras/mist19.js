@@ -62,7 +62,7 @@ export default () => (
       <FingerPrintFloor img={huella} />
       <AppWifiFloor />
       <KeyFloor img={llave} />
-      <Resources />
+      <Resources manual="mist" plantilla="mist" />
     </div>
   </Layout>
 )

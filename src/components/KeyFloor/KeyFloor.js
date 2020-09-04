@@ -16,7 +16,7 @@ export default ({ img }) => (
         </h3>
         <p>
           Tu <b>llave mecanica</b> te permite tener siempre la{" "}
-          <b>ultima decision</b> sobre tu cerradura, abre o cierra con ella{" "}
+          <b>última decision</b> sobre tu cerradura, abre o cierra con ella{" "}
           <b>cuando sea necesario.</b>
         </p>
       </div>

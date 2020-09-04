@@ -86,7 +86,7 @@ const IndexPage = () => (
     <HomeLocks />
     <LockBanner
       img={otros_productos}
-      title={<span className={classes.finalSubtitle}>Accesorios</span>}
+      title={<span className={classes.finalSubtitle}>Otros Productos</span>}
       darkText
       price={
         <Fragment>
@@ -96,7 +96,7 @@ const IndexPage = () => (
       actions={[
         {
           title: "CONOCE MÁS",
-          url: "/accesorios",
+          url: "/otros-productos",
           blue: true,
         },
       ]}

@@ -73,7 +73,7 @@ export default () => (
       <CodesFloor img={codigo} />
       <AccessCardFloor img={tarjeta} />
       <KeyFloor img={llave} />
-      <Resources />
+      <Resources manual="syf" plantilla="syf" />
     </div>
   </Layout>
 )
