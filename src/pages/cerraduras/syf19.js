@@ -1,7 +1,7 @@
 import React from "react"
 import classes from "stylesheets/singleLock.module.less"
 import "stylesheets/main.module.less"
-import syf from "images/locks/syn/synBanner.jpg"
+import syf from "images/locks/syf/banner.png"
 import mecanismo from "images/locks/syf/syfMecanismo.jpg"
 import llave from "images/locks/shared_all/llaveMecanicaRecurso2.png"
 import codigo from "images/locks/syf/codigo.png"
@@ -34,6 +34,7 @@ export default () => (
         title={KEY_NAME}
         price={getPriceString(KEY_NAME)}
         darkText
+        reverse
         actions={[
           {
             title: "COMPRAR",
