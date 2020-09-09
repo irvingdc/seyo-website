@@ -20,6 +20,18 @@ import hd from "images/accesories/FRIGG/iconos/hd.png"
 import nube from "images/accesories/FRIGG/iconos/nube.png"
 import vision from "images/accesories/FRIGG/iconos/vision.png"
 import bateria from "images/accesories/FRIGG/iconos/bateria.png"
+
+import movimiento_a from "images/accesories/FRIGG/iconos/movimiento_a.png"
+import audio_a from "images/accesories/FRIGG/iconos/audio_a.png"
+import lente_a from "images/accesories/FRIGG/iconos/lente_a.png"
+import wifi_a from "images/accesories/FRIGG/iconos/wifi_a.png"
+import ip_a from "images/accesories/FRIGG/iconos/ip_a.png"
+import notificaciones_a from "images/accesories/FRIGG/iconos/notificaciones_a.png"
+import hd_a from "images/accesories/FRIGG/iconos/hd_a.png"
+import nube_a from "images/accesories/FRIGG/iconos/nube_a.png"
+import vision_a from "images/accesories/FRIGG/iconos/vision_a.png"
+import bateria_a from "images/accesories/FRIGG/iconos/bateria_a.png"
+
 import movimiento_frigg from "images/accesories/FRIGG/movimiento.png"
 import wifi_frigg from "images/accesories/FRIGG/wifi.png"
 import hd_frigg from "images/accesories/FRIGG/hd.png"
@@ -103,7 +115,7 @@ export default () => (
       </div>
       <FingerPrintFloor
         img={movimiento_frigg}
-        icon={movimiento}
+        icon={movimiento_a}
         title="DETECCIÓN DE MOVIMIENTO"
         label=" "
         text={
@@ -123,8 +135,8 @@ export default () => (
         img={wifi_frigg}
         title1="CONEXIÓN WIFI"
         title2="AUDIO BIDIRECCIONAL"
-        icon1={wifi}
-        icon2={audio}
+        icon1={wifi_a}
+        icon2={audio_a}
         text1={
           <p>
             Utiliza <b>conectividad a internet</b> para monitorear el exterior
@@ -143,7 +155,7 @@ export default () => (
       />
       <CodesFloor
         img={vision_frigg}
-        icon={vision}
+        icon={vision_a}
         title="VISIÓN NOCTURNA"
         label=" "
         text={
@@ -157,7 +169,7 @@ export default () => (
 
       <FingerPrintFloor
         img={hd_frigg}
-        icon={hd}
+        icon={hd_a}
         title="VIDEO FULL HD"
         label=" "
         text={

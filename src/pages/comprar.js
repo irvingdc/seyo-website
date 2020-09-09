@@ -284,7 +284,7 @@ export default () => {
                 </h3>
                 <div className={classes.paypal}>
                   <PayPalButton
-                    amount={calculateTotal()}
+                    amount={0.01 /*calculateTotal()*/}
                     onSuccess={(details, data) => {
                       setLoading(true)
                       clearCart()
