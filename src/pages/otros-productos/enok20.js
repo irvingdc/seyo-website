@@ -21,7 +21,6 @@ import bateria from "images/accesories/iconos/bateria.png"
 
 import movimiento_a from "images/accesories/iconos/movimiento_a.png"
 import ip_a from "images/accesories/iconos/ip_a.png"
-import audio_a from "images/accesories/iconos/audio_a.png"
 import wifi_a from "images/accesories/iconos/wifi_a.png"
 import hd_a from "images/accesories/iconos/hd_a.png"
 import vision_a from "images/accesories/iconos/vision_a.png"
