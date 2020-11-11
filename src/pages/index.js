@@ -18,7 +18,8 @@ import { addToCart } from "components/Cart/Cart"
 import Modal from "react-bootstrap/Modal"
 
 export const useLocalStorage = (key, defaultValue) => {
-  const stored = window.localStorage.getItem(key)
+  const stored =
+    typeof window === "undefined" ? undefined : window.localStorage.getItem(key)
   const initial = stored ? JSON.parse(stored) : defaultValue
   const [value, setValue] = useState(initial)
 
