@@ -22,7 +22,10 @@ export default ({ onDiscount }) => {
       setError("El código no es válido. Intenta de nuevo.")
     }
   }
-  console.log("kadelamora", hash.sha1("kadelamora"))
+
+  console.log("SEGURIDAD15", hash.sha1("SEGURIDAD15"))
+  console.log("SEYO10OFF", hash.sha1("SEYO10OFF"))
+  console.log("20OFFSEGURIDAD", hash.sha1("20OFFSEGURIDAD"))
   return (
     <div className={classes.container}>
       <p>¿Tienes un cupón? Úsalo ahora:</p>
