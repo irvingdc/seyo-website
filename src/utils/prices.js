@@ -56,7 +56,7 @@ export const LOCKS = {
     manual: "/soporte/sol/manual.pdf",
     template: "/soporte/sol/plantilla.pdf",
   },
-  FREYA19: {
+  /*FREYA19: {
     price: 5840,
     name: "FREYA-19",
     image: freya19_img,
@@ -71,7 +71,7 @@ export const LOCKS = {
     link: "/cerraduras/mist19",
     template: "/soporte/mist/plantilla.pdf",
     manual: "/soporte/mist/manual.pdf",
-  },
+  },*/
   MIST20: {
     price: 4510,
     name: "MIST-20",
