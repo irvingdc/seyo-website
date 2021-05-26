@@ -9,6 +9,8 @@ import syf from "images/locks/syf/syf_flipped.png"
 import tyr from "images/locks/tyr/tyr.png"
 import not from "images/locks/not/not.png"
 import sol from "images/locks/sol/sol.png"
+import freya from "images/locks/freya/freya.png"
+import mist from "images/locks/mist19/mist19-flipped.png"
 import mist20 from "images/locks/mist20/mist20.png"
 import ull20 from "images/locks/ull20/ull20.png"
 import vali20 from "images/locks/vali20/vali20.png"
@@ -77,6 +79,22 @@ export default () => (
           title="SOL19"
           img={sol}
           price={getPriceString("SOL19")}
+          methods={["wifi", "app", "codigo", "llave", "tarjeta"]}
+        />
+        <LockCard
+          link="/cerraduras/mist19"
+          direction="right"
+          title="MIST19"
+          img={mist}
+          price={getPriceString("MIST19")}
+          methods={["huella", "wifi", "app", "llave"]}
+        />
+        <LockCard
+          link="/cerraduras/freya19"
+          direction="left"
+          img={freya}
+          title="FREYA19"
+          price={getPriceString("FREYA19")}
           methods={["wifi", "app", "codigo", "llave", "tarjeta"]}
         />
         <LockCard
