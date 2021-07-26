@@ -19,6 +19,7 @@ import CodesFloor from "components/CodesFloor/CodesFloor"
 import AccessCardFloor from "components/AccessCardFloor/AccessCardFloor"
 import Resources from "components/Resources/Resources"
 import KeyFloor from "components/KeyFloor/KeyFloor"
+import Warning from "components/Warning"
 import { addToCart } from "components/Cart/Cart"
 
 const KEY_NAME = "SYF19"
@@ -33,6 +34,7 @@ export default () => (
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>{KEY_NAME}</h1>
+      <Warning message="Últimas piezas" />
       <LockBanner
         img={syf}
         label="Cerradura Inteligente"

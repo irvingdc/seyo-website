@@ -16,6 +16,7 @@ import AppWifiFloor from "components/AppWifiFloor/AppWifiFloor"
 import CodesFloor from "components/CodesFloor/CodesFloor"
 import AccessCardFloor from "components/AccessCardFloor/AccessCardFloor"
 import Resources from "components/Resources/Resources"
+import Warning from "components/Warning"
 import KeyFloor from "components/KeyFloor/KeyFloor"
 import { addToCart } from "components/Cart/Cart"
 
@@ -31,6 +32,7 @@ export default () => (
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>{KEY_NAME}</h1>
+      <Warning message="Últimas piezas" />
       <LockBanner
         reverse
         img={banner}
