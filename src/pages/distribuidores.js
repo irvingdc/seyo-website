@@ -12,6 +12,7 @@ import dysmx from "images/distributors/dysmx.png"
 import wit from "images/distributors/wit.png"
 import turrme from "images/distributors/turrme.png"
 import cymisa from "images/distributors/cymisa.png"
+import cdi from "images/distributors/cdi.png"
 import Layout from "components/Layout/Layout"
 import PreHeader from "components/PreHeader/PreHeader"
 import ContactForm from "components/ContactForm/ContactForm"
@@ -247,6 +248,23 @@ export default () => (
             </p>
           }
           img={cymisa}
+        />
+        <Distributor
+          location="QUERETARO"
+          name="CDI Cerraduras Digitales"
+          website="https://www.cerraduradigital.com.mx"
+          content={
+            <p>
+              <b>Contacto: </b>Cristina Fausto.<br />
+              <b>Dirección: </b> Plaza Lago Juriquilla. Lago Cuitzeo 319 Loc. 8, Cumbres de lago Juriquilla, Queretaro. Qro. C.P. 76230.
+              <br />
+              <b>Teléfono:</b> 7222155168 <br />
+              <b>Correo Electrónico: </b>contacto@cerraduradigital.com.mx<br />
+              <b>Horario de Atención: </b> L-V 09:00 a.m. A 18:00 p.m. Sábado de 09:00 a.m. a 16:00 p.m. Domingo de 09:00 a.m. a 13:00 p.m.
+              <br />
+            </p>
+          }
+          img={cdi}
         />
       </div>
       <h2 className={classes.intro}>
