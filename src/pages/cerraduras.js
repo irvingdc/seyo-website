@@ -10,7 +10,7 @@ import tyr from "images/locks/tyr/tyr.png"
 import not from "images/locks/not/not.png"
 import sol from "images/locks/sol/sol.png"
 import freya from "images/locks/freya/freya.png"
-import mist from "images/locks/mist19/mist19-flipped.png"
+import mist from "images/locks/mist21/mist21-flipped.png"
 import mist20 from "images/locks/mist20/mist20.png"
 import ull20 from "images/locks/ull20/ull20.png"
 import vali20 from "images/locks/vali20/vali20.png"
@@ -42,11 +42,11 @@ export default () => (
       </LineSubtitle>
       <div className={classes.allLocks}>
         <LockCard
-          link="/cerraduras/syn19"
+          link="/cerraduras/syn21"
           direction="left"
-          title="SYN19"
+          title="SYN21"
           img={syn}
-          price={getPriceString("SYN19")}
+          price={getPriceString("SYN21")}
           methods={["huella", "wifi", "app", "codigo", "llave", "tarjeta"]}
         />
         <LockCard
@@ -58,19 +58,19 @@ export default () => (
           methods={["huella", "wifi", "app", "codigo", "llave", "tarjeta"]}
         />
         <LockCard
-          link="/cerraduras/tyr19"
+          link="/cerraduras/tyr21"
           direction="left"
-          title="TYR19"
+          title="TYR21"
           img={tyr}
-          price={getPriceString("TYR19")}
+          price={getPriceString("TYR21")}
           methods={["huella", "wifi", "app", "codigo", "llave", "tarjeta"]}
         />
         <LockCard
-          link="/cerraduras/mist19"
+          link="/cerraduras/mist21"
           direction="right"
-          title="MIST19"
+          title="MIST21"
           img={mist}
-          price={getPriceString("MIST19")}
+          price={getPriceString("MIST21")}
           methods={["huella", "wifi", "app", "llave"]}
         />
         <LockCard
@@ -90,11 +90,11 @@ export default () => (
           methods={["huella", "wifi", "app", "llave"]}
         />
         <LockCard
-          link="/cerraduras/freya19"
+          link="/cerraduras/freya21"
           direction="left"
           img={freya}
-          title="FREYA19"
-          price={getPriceString("FREYA19")}
+          title="FREYA21"
+          price={getPriceString("FREYA21")}
           methods={["wifi", "app", "codigo", "llave", "tarjeta"]}
         />
         <LockCard

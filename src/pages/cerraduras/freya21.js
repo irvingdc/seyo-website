@@ -1,12 +1,12 @@
 import React from "react"
 import classes from "stylesheets/singleLock.module.less"
 import "stylesheets/main.module.less"
-import syn from "images/locks/syn/synBanner.jpg"
-import mecanismo from "images/locks/syn/synMecanismo.jpg"
+import banner from "images/locks/freya/banner.jpg"
+import mecanismo from "images/locks/freya/mecanismo.jpg"
 import llave from "images/locks/shared_all/llaveMecanicaRecurso2.png"
-import codigo from "images/locks/syn/codigo.png"
-import huella from "images/locks/syn/huella.png"
-import tarjeta from "images/locks/syn/tarjeta.png"
+import codigo from "images/locks/freya/codigo.png"
+import huella from "images/locks/freya/huella.png"
+import tarjeta from "images/locks/freya/tarjeta.png"
 import LockBanner from "components/LockBanner/LockBanner"
 import { getPriceString } from "../../utils/functions"
 import Layout from "components/Layout/Layout"
@@ -20,21 +20,22 @@ import AccessCardFloor from "components/AccessCardFloor/AccessCardFloor"
 import Resources from "components/Resources/Resources"
 import KeyFloor from "components/KeyFloor/KeyFloor"
 import { addToCart } from "components/Cart/Cart"
+var EventBus = require("eventbusjs")
 
-const KEY_NAME = "SYN19"
+const KEY_NAME = "FREYA21"
 
 export default () => (
   <Layout
     productToPurchase={KEY_NAME}
     title={`Seyo | Productos - ${KEY_NAME}`}
     description="Abre la puerta al futuro, abre la puerta a SEYO."
-    canonical="/cerraduras/syn19/"
+    canonical="/cerraduras/freya21/"
   >
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>{KEY_NAME}</h1>
       <LockBanner
-        img={syn}
+        img={banner}
         label="Cerradura Inteligente"
         title={KEY_NAME}
         price={getPriceString(KEY_NAME)}
@@ -59,7 +60,7 @@ export default () => (
             Anti <b>tarjetas</b>
           </p>,
           <p>
-            Bulón de <b>seguridad</b>
+            Bulon de <b>seguridad</b>
           </p>,
         ]}
       />
@@ -75,7 +76,7 @@ export default () => (
       <CodesFloor img={codigo} />
       <AccessCardFloor img={tarjeta} />
       <KeyFloor img={llave} />
-      <Resources manual="syn" plantilla="syn" />
+      <Resources manual="freya" plantilla="freya" />
     </div>
   </Layout>
 )

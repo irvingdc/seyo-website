@@ -18,10 +18,10 @@ export default () => (
     />
     <LockCard
       direction="left"
-      link="/cerraduras/tyr19"
-      title="TYR19"
+      link="/cerraduras/tyr21"
+      title="TYR21"
       img={tyr}
-      price={getPriceString("TYR19")}
+      price={getPriceString("TYR21")}
     />
   </div>
 )

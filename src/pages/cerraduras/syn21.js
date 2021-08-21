@@ -1,12 +1,12 @@
 import React from "react"
 import classes from "stylesheets/singleLock.module.less"
 import "stylesheets/main.module.less"
-import banner from "images/locks/tyr/banner.jpg"
-import mecanismo from "images/locks/tyr/mecanismo.jpg"
+import syn from "images/locks/syn/synBanner.jpg"
+import mecanismo from "images/locks/syn/synMecanismo.jpg"
 import llave from "images/locks/shared_all/llaveMecanicaRecurso2.png"
-import codigo from "images/locks/tyr/codigo.png"
-import huella from "images/locks/tyr/huella.png"
-import tarjeta from "images/locks/tyr/tarjeta.png"
+import codigo from "images/locks/syn/codigo.png"
+import huella from "images/locks/syn/huella.png"
+import tarjeta from "images/locks/syn/tarjeta.png"
 import LockBanner from "components/LockBanner/LockBanner"
 import { getPriceString } from "../../utils/functions"
 import Layout from "components/Layout/Layout"
@@ -21,20 +21,20 @@ import Resources from "components/Resources/Resources"
 import KeyFloor from "components/KeyFloor/KeyFloor"
 import { addToCart } from "components/Cart/Cart"
 
-const KEY_NAME = "TYR19"
+const KEY_NAME = "SYN21"
 
 export default () => (
   <Layout
     productToPurchase={KEY_NAME}
     title={`Seyo | Productos - ${KEY_NAME}`}
     description="Abre la puerta al futuro, abre la puerta a SEYO."
-    canonical="/cerraduras/tyr19/"
+    canonical="/cerraduras/syn21/"
   >
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>{KEY_NAME}</h1>
       <LockBanner
-        img={banner}
+        img={syn}
         label="Cerradura Inteligente"
         title={KEY_NAME}
         price={getPriceString(KEY_NAME)}
@@ -59,7 +59,7 @@ export default () => (
             Anti <b>tarjetas</b>
           </p>,
           <p>
-            Bulones de <b>seguridad</b>
+            Bulón de <b>seguridad</b>
           </p>,
         ]}
       />
@@ -75,7 +75,7 @@ export default () => (
       <CodesFloor img={codigo} />
       <AccessCardFloor img={tarjeta} />
       <KeyFloor img={llave} />
-      <Resources manual="tyr" plantilla="tyr" />
+      <Resources manual="syn" plantilla="syn" />
     </div>
   </Layout>
 )

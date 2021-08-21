@@ -1,9 +1,9 @@
-import syn19_img from "images/locks/syn/syn_small.png"
+import syn21_img from "images/locks/syn/syn_small.png"
 import syf19_img from "images/locks/syf/syf_small.png"
-import tyr19_img from "images/locks/tyr/tyr_small.png"
+import tyr21_img from "images/locks/tyr/tyr_small.png"
 import sol19_img from "images/locks/sol/sol_small.png"
-import freya19_img from "images/locks/freya/freya_small.png"
-import myst19_img from "images/locks/mist19/mist19_small.png"
+import freya21_img from "images/locks/freya/freya_small.png"
+import myst19_img from "images/locks/mist21/mist21_small.png"
 import ull20_img from "images/locks/ull20/ull20_small.png"
 import vali20_img from "images/locks/vali20/vali20_small.png"
 import myst20_img from "images/locks/mist20/mist20_small.png"
@@ -15,11 +15,11 @@ import enok_img from "images/accesories/ENOK20/enok_small.png"
 import casper_img from "images/accesories/CASPER20/casper_small.png"
 
 export const LOCKS = {
-  SYN19: {
+  SYN21: {
     price: 9300,
-    name: "SYN-19",
-    image: syn19_img,
-    link: "/cerraduras/syn19",
+    name: "SYN-21",
+    image: syn21_img,
+    link: "/cerraduras/syn21",
     manual: "/soporte/syn/manual.pdf",
     template: "/soporte/syn/plantilla.pdf",
   },
@@ -31,11 +31,11 @@ export const LOCKS = {
     manual: "/soporte/syf/manual.pdf",
     template: "/soporte/syf/plantilla.pdf",
   },
-  TYR19: {
+  TYR21: {
     price: 8360,
-    name: "TYR-19",
-    image: tyr19_img,
-    link: "/cerraduras/tyr19",
+    name: "TYR-21",
+    image: tyr21_img,
+    link: "/cerraduras/tyr21",
     manual: "/soporte/tyr/manual.pdf",
     template: "/soporte/tyr/plantilla.pdf",
   },
@@ -47,19 +47,19 @@ export const LOCKS = {
     manual: "/soporte/sol/manual.pdf",
     template: "/soporte/sol/plantilla.pdf",
   },
-  FREYA19: {
+  FREYA21: {
     price: 5840,
-    name: "FREYA-19",
-    image: freya19_img,
-    link: "/cerraduras/freya19",
+    name: "FREYA-21",
+    image: freya21_img,
+    link: "/cerraduras/freya21",
     template: "/soporte/freya/plantilla.pdf",
     manual: "/soporte/freya/manual.pdf",
   },
-  MIST19: {
+  MIST21: {
     price: 3900,
-    name: "MIST-19",
+    name: "MIST-21",
     image: myst19_img,
-    link: "/cerraduras/mist19",
+    link: "/cerraduras/mist21",
     template: "/soporte/mist/plantilla.pdf",
     manual: "/soporte/mist/manual.pdf",
   },

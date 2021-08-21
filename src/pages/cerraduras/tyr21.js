@@ -1,10 +1,12 @@
 import React from "react"
 import classes from "stylesheets/singleLock.module.less"
 import "stylesheets/main.module.less"
-import banner from "images/locks/mist19/banner.jpg"
-import mecanismo from "images/locks/mist19/mecanismo.jpg"
-import llave from "images/locks/shared_all/llaveMecanicaRecurso.png"
-import huella from "images/locks/mist19/huella.png"
+import banner from "images/locks/tyr/banner.jpg"
+import mecanismo from "images/locks/tyr/mecanismo.jpg"
+import llave from "images/locks/shared_all/llaveMecanicaRecurso2.png"
+import codigo from "images/locks/tyr/codigo.png"
+import huella from "images/locks/tyr/huella.png"
+import tarjeta from "images/locks/tyr/tarjeta.png"
 import LockBanner from "components/LockBanner/LockBanner"
 import { getPriceString } from "../../utils/functions"
 import Layout from "components/Layout/Layout"
@@ -13,17 +15,20 @@ import UnlockMethods from "components/UnlockMethods/UnlockMethods"
 import LockMachinery from "components/LockMachinery/LockMachinery"
 import FingerPrintFloor from "components/FingerPrintFloor/FingerPrintFloor"
 import AppWifiFloor from "components/AppWifiFloor/AppWifiFloor"
+import CodesFloor from "components/CodesFloor/CodesFloor"
+import AccessCardFloor from "components/AccessCardFloor/AccessCardFloor"
 import Resources from "components/Resources/Resources"
 import KeyFloor from "components/KeyFloor/KeyFloor"
-var EventBus = require("eventbusjs")
+import { addToCart } from "components/Cart/Cart"
 
-const KEY_NAME = "MIST19"
+const KEY_NAME = "TYR21"
 
 export default () => (
   <Layout
+    productToPurchase={KEY_NAME}
     title={`Seyo | Productos - ${KEY_NAME}`}
     description="Abre la puerta al futuro, abre la puerta a SEYO."
-    canonical="/cerraduras/mist19/"
+    canonical="/cerraduras/tyr21/"
   >
     <div className={classes.container}>
       <PreHeader type="h2" />
@@ -36,14 +41,8 @@ export default () => (
         darkText
         actions={[
           {
-            title: "AGOTADO",
-            onClick: () =>
-              EventBus.dispatch(
-                "show_toast",
-                null,
-                "Lo sentimos, el producto no se encuentra en existencia",
-                "warning"
-              ),
+            title: "COMPRAR",
+            onClick: () => addToCart(KEY_NAME),
           },
         ]}
       />
@@ -51,7 +50,6 @@ export default () => (
         Conoce más de <b>{KEY_NAME}</b>
       </h2>
       <LockMachinery
-        padRight
         img={mecanismo}
         options={[
           <p>
@@ -60,19 +58,24 @@ export default () => (
           <p>
             Anti <b>tarjetas</b>
           </p>,
+          <p>
+            Bulones de <b>seguridad</b>
+          </p>,
         ]}
       />
       <div className={classes.methods}>
         <UnlockMethods
           size="large"
-          methods={["huella", "wifi", "app", "llave"]}
+          methods={["huella", "wifi", "app", "codigo", "llave", "tarjeta"]}
           direction="center"
         />
       </div>
       <FingerPrintFloor img={huella} />
       <AppWifiFloor />
+      <CodesFloor img={codigo} />
+      <AccessCardFloor img={tarjeta} />
       <KeyFloor img={llave} />
-      <Resources manual="mist" plantilla="mist" />
+      <Resources manual="tyr" plantilla="tyr" />
     </div>
   </Layout>
 )

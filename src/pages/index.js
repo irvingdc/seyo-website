@@ -42,32 +42,32 @@ const IndexPage = () => {
             <LockBanner
               img={img1}
               label="Cerradura Inteligente"
-              title="FREYA19"
-              price={getPriceString("FREYA19")}
+              title="FREYA21"
+              price={getPriceString("FREYA21")}
               actions={[
                 {
                   title: "CONOCE MÁS",
-                  url: "/cerraduras/freya19",
+                  url: "/cerraduras/freya21",
                 },
                 {
                   title: "COMPRA YA",
-                  onClick: () => addToCart("FREYA19"),
+                  onClick: () => addToCart("FREYA21"),
                 },
               ]}
             />,
             <LockBanner
               img={img3}
               label="Cerradura Inteligente"
-              title="SYN19"
-              price={getPriceString("SYN19")}
+              title="SYN21"
+              price={getPriceString("SYN21")}
               actions={[
                 {
                   title: "CONOCE MÁS",
-                  url: "/cerraduras/syn19",
+                  url: "/cerraduras/syn21",
                 },
                 {
                   title: "COMPRA YA",
-                  onClick: () => addToCart("SYN19"),
+                  onClick: () => addToCart("SYN21"),
                 },
               ]}
             />,
