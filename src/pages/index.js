@@ -6,7 +6,6 @@ import Carousel from "components/Carousel/Carousel"
 import LockBanner from "components/LockBanner/LockBanner"
 import HomeLocks from "components/HomeLocks/HomeLocks"
 import img1 from "images/banners/freya_home.jpg"
-import img2 from "images/banners/not_home.jpg"
 import img3 from "images/banners/syn_home.jpg"
 import otros_productos from "images/banners/otros_productos.png"
 import locks_all from "images/banners/locks_all_cropped.jpg"
@@ -14,13 +13,15 @@ import classes from "stylesheets/index.module.less"
 import { getPriceString } from "utils/functions"
 import { Link } from "gatsby"
 import { addToCart } from "components/Cart/Cart"
+import banner from "images/banners/mist.jpg"
+import Modal from "react-bootstrap/Modal"
+
 
 export const useLocalStorage = (key, defaultValue) => {
   const stored =
     typeof window === "undefined" ? undefined : window.localStorage.getItem(key)
   const initial = stored ? JSON.parse(stored) : defaultValue
   const [value, setValue] = useState(initial)
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.localStorage.setItem(key, JSON.stringify(value))
@@ -30,6 +31,9 @@ export const useLocalStorage = (key, defaultValue) => {
 }
 
 const IndexPage = () => {
+
+  let [hidden, setHidden] = useLocalStorage("modal.mist.hidden", false)
+
   return (
     <Layout
       title="Seyo México"
@@ -37,6 +41,17 @@ const IndexPage = () => {
       canonical="/"
     >
       <div className={classes.carousel}>
+        <Modal
+          show={!hidden}
+          onHide={() => setHidden(true)}
+          dialogClassName={classes.modalClass}
+        >
+          <Modal.Body>
+            <Link to="/cerraduras/mist21/">
+              <img src={banner} alt="buen fin" />
+            </Link>
+          </Modal.Body>
+        </Modal>
         <Carousel
           items={[
             <LockBanner
