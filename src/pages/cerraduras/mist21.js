@@ -16,6 +16,8 @@ import AppWifiFloor from "components/AppWifiFloor/AppWifiFloor"
 import Resources from "components/Resources/Resources"
 import KeyFloor from "components/KeyFloor/KeyFloor"
 import { addToCart } from "components/Cart/Cart"
+import Warning from "components/Warning"
+
 var EventBus = require("eventbusjs")
 
 const KEY_NAME = "MIST21"
@@ -30,6 +32,7 @@ export default () => (
     <div className={classes.container}>
       <PreHeader type="h2" />
       <h1>{KEY_NAME}</h1>
+      <Warning message="15% de descuento (precio original: $3,900.00)." />
       <LockBanner
         img={banner}
         label="Cerradura Inteligente"

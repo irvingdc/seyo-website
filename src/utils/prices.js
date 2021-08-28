@@ -56,7 +56,7 @@ export const LOCKS = {
     manual: "/soporte/freya/manual.pdf",
   },
   MIST21: {
-    price: 3900,
+    price: 3900*0.85, //special discount added on 27/08/2021
     name: "MIST-21",
     image: myst19_img,
     link: "/cerraduras/mist21",

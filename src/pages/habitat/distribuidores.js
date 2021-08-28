@@ -24,7 +24,7 @@ export default () => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body,
     })
-      .then(() => navigate("/ruleta/"))
+      .then(() => navigate("/mensaje-enviado/"))
       .catch(error => alert(error))
   }
 
