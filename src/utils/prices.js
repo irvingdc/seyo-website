@@ -9,6 +9,8 @@ import vali20_img from "images/locks/vali20/vali20_small.png"
 import myst20_img from "images/locks/mist20/mist20_small.png"
 import tarjetaRF_img from "images/accesories/tarjeta_small.png"
 import gateway_img from "images/accesories/gateway_small.png"
+import kit_s21_small from "images/accesories/kit_s21_small.jpg"
+import kit_t21_small from "images/accesories/kit_t21_small.jpg"
 import frigg_img from "images/accesories/FRIGG20/frigg_small.png"
 import balder_img from "images/accesories/BALDER/balder_small.png"
 import enok_img from "images/accesories/ENOK20/enok_small.png"
@@ -130,6 +132,18 @@ export const ACCESORIES = {
     link: "/otros-productos/enok20",
     manual: "/soporte/enok/manual.pdf",
     specs: "/soporte/enok/specs.pdf",
+  },
+  KIT_GOOGLE_SYN21: {
+    price: 9500,
+    name: "Kit De Apertura Remota Por Google Home con SYN21",
+    image: kit_s21_small,
+    link: "/otros-productos/kit-google-syn21/",
+  },
+  KIT_GOOGLE_TYR21: {
+    price: 8500,
+    name: "Kit De Apertura Remota Por Google Home con TYR21",
+    image: kit_t21_small,
+    link: "/otros-productos/kit-google-tyr21/",
   },
   TEST_PRODUCT: {
     price: 1,

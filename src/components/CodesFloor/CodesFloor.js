@@ -3,18 +3,18 @@ import classes from "stylesheets/serviceFloor.module.less"
 import app_recurso from "images/locks/shared_all/codigoRecurso.png"
 import codigo_b from "images/icons/codigo_b.png"
 
-export default ({ img, hideExtraText, text, title, label, icon }) => (
+export default ({ img, hideExtraText, text, title, label, icon, hideTitle }) => (
   <div className={classes.container}>
     <div>
       <img src={img || app_recurso} alt="" />
       <div className={classes.text}>
-        <h3>
+        {hideTitle ? null : <h3>
           <img src={icon || codigo_b} alt="" />
           <b>
             {title || "CÓDIGO DE ACCESO"}
             <span>{label || "Desde cualquier lugar"}</span>
           </b>
-        </h3>
+        </h3>}
         {text || (
           <p>
             Genera cuantos <b>códigos</b> necesites, programa sus permisos de

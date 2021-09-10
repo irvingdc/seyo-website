@@ -53,7 +53,7 @@ const caracteristics = [
   },
   {
     img: ip,
-    title: "Certificación IP64",
+    title: "Certificación IP65",
   },
   {
     img: notificaciones,

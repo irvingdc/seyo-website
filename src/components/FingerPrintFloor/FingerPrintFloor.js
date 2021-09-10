@@ -11,17 +11,18 @@ export default ({
   bottomText,
   title,
   label,
+  hideTitle
 }) => (
   <div className={classes.container}>
     <div>
       <div className={classes.text}>
-        <h3>
+        {hideTitle ? null : <h3>
           <img src={icon || huella_b} alt="" />
           <b>
             {title || "HUELLA DACTILAR"}
             <span>{label || "Tu llave más segura."}</span>
           </b>
-        </h3>
+        </h3>}
         {text ? (
           text
         ) : (

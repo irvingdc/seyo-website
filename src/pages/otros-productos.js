@@ -11,6 +11,8 @@ import casper from "images/accesories/CASPER20/casper.png"
 import tarjeta from "images/accesories/tarjeta.png"
 import { getPriceString } from "utils/functions"
 import LockCard from "components/LockCard/LockCard"
+import syn from "images/locks/syn/syn_alt.png"
+import tyr from "images/locks/tyr/tyr_alt.png"
 
 export default () => (
   <Layout
@@ -32,6 +34,24 @@ export default () => (
         Protege lo que más te importa con <b>SEYO</b>.
       </h2>
       <div className={classes.allLocks}>
+        <LockCard
+          subtitle="Kit De Apertura Remota"
+          link="/otros-productos/kit-google-syn21/"
+          direction="left"
+          title="Google Home + SYN21"
+          img={syn}
+          price={getPriceString("KIT_GOOGLE_SYN21")}
+          methods={[]}
+        />
+        <LockCard
+          subtitle="Kit De Apertura Remota"
+          link="/otros-productos/kit-google-tyr21/"
+          direction="right"
+          title="Google Home + TYR21"
+          img={tyr}
+          price={getPriceString("KIT_GOOGLE_TYR21")}
+          methods={[]}
+        />
         <LockCard
           subtitle="CONECTIVIDAD WIFI"
           link="/otros-productos/gateway/"
