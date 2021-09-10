@@ -52,17 +52,19 @@ export default () => (
       </h2>
       <CodesFloor img={gateway} hideExtraText hideTitle
         text={<p>
-          Realiza aperturas desde cualquier lugar del mundo desde tu APP.
+          Utiliza tu gateway para integrar tu cerradura a Google home y
+          realiza aperturas desde cualquier lugar del mundo.
           <br />
           <br />
-          Recibe notificaciones de apertura en tiempo real.
+          Tu gateway te permitirá aperturar tu cerradura por comandos de voz
+          utilizando el dispositivo Google Nest.
         </p>} />
       <FingerPrintFloor img={lock} hideExtraText hideTitle
         text={<p>
-          Olvídate de las llaves con SYN21 tendras 6 métodos de apertura.
+          Olvídate de las llaves con SYN21 tendrás 6 métodos de apertura.
           <br />
           <br />
-          Mecanismos de alta seguridad y materiales de la mas alta gama.
+          Mecanismos de alta seguridad y materiales de la más alta gama.
         </p>} />
       <CodesFloor img={google} hideExtraText hideExtraText hideTitle
         text={<p>
