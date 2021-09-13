@@ -5,6 +5,7 @@ import Layout from "components/Layout/Layout"
 import Carousel from "components/Carousel/Carousel"
 import LockBanner from "components/LockBanner/LockBanner"
 import HomeLocks from "components/HomeLocks/HomeLocks"
+import HomeKits from "components/HomeKits/HomeKits"
 import img1 from "images/banners/freya_home.jpg"
 import img3 from "images/banners/syn_home.jpg"
 import otros_productos from "images/banners/otros_productos.png"
@@ -102,6 +103,7 @@ const IndexPage = () => {
           <img src={locks_all} alt="Nuestras Cerraduras" />
         </Link>
       </div>
+      <HomeKits/>
       <HomeLocks />
       <LockBanner
         img={otros_productos}
