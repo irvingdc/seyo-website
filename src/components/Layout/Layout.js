@@ -1,6 +1,6 @@
 import React from "react"
 import classes from "./Layout.module.less"
-import Nav from "components/Nav/Nav"
+import Nav from "components/Nav"
 import PurchaseFooter from "components/PurchaseFooter/PurchaseFooter"
 import Footer from "components/Footer/Footer"
 

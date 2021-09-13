@@ -1,6 +1,7 @@
 .container {
-  position: relative;
   padding: 10px;
+  z-index: 9999;
+  position: relative;
   .icon {
     width: 30px;
     height: auto;
@@ -26,11 +27,12 @@
 }
 
 
-@media (max-width: 950px) {
+@media (max-width: 550px) {
   .container {
     position: fixed;
-    right: 50px;
+    right: 10px;
     top: 0px;
+    z-index: 9999;
     .icon {
       width: 28px;
     }

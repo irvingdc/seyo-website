@@ -1,0 +1,230 @@
+.container {
+  height: 60px;
+  background-color: #ffffffdb;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  .menuButton {
+    display: none;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    > a {
+      border-bottom: none;
+      height: 100%;
+      align-items: center;
+      display: flex;
+      > img {
+        height: 40px;
+        width: auto;
+      }
+    }
+    .rightButtons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .white {
+      margin-right: 12px;
+      color: #008fc7;
+      padding: 6px 13px;
+      border-radius: 3px;
+      font-weight: 600;
+      height: 32px !important;
+      transition: all 0.2s;
+      filter: brightness(1);
+      border: 2px solid #008fc7;
+      display: inline-flex;
+      align-items: center;
+    }
+    .green {
+      color: white;
+      padding: 6px 13px;
+      border-radius: 3px;
+      font-weight: 600;
+      background: #008fc7;
+      margin: 0;
+      height: 32px !important;
+      transition: all 0.2s;
+      filter: brightness(1);
+      border: 2px solid #008fc7;
+      display: inline-flex;
+      align-items: center;
+    }
+    .search {
+      border: none;
+      display: block;
+      padding-left: 8px;
+      img {
+        height: 20px;
+        width: auto;
+        position: relative;
+        display: block;
+      }
+    }
+    .green:hover,
+    .white:hover {
+      filter: brightness(1.15);
+    }
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      > a{
+        margin: 0px 10px;
+      }
+    }
+  }
+}
+
+
+.whatsapp {
+  background-color: #2db742;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  right: 16px;
+  top: 66px;
+  z-index: 9000;
+  box-shadow: 0px 2px 6px -2px #000000eb;
+  img {
+    width: 22px;
+    position: relative;
+    right: -1px;
+  }
+}
+
+
+@media (max-width: 550px) {
+  .whatsapp{
+    top: unset;
+    bottom: 20px;
+  }
+  .notBlurred {
+    background: white !important;
+  }
+  .container {
+    height: 50px;
+    box-shadow: 0px 0px 12px 0px #00000033;
+    .mainIcon {
+      position: fixed;
+      left: 48px;
+      top: 11px;
+      height: fit-content;
+      img {
+        height: 28px;
+        position: relative;
+      }
+    }
+    .green,
+    .white {
+      position: absolute;
+      right: 36px;
+      top: 10px;
+      font-size: 14px !important;
+      padding: 2px 8px !important;
+      height: 30px !important;
+      align-items: center;
+      display: flex;
+    }
+    .white {
+      right: 130px;
+    }
+    .search {
+      position: absolute;
+      right: 8px;
+      top: 14px;
+    }
+    .content {
+      position: fixed;
+      top: 50px;
+      left: 0px;
+      width: calc(100vw + 20px);
+      height: 100vh !important;
+      flex-direction: column;
+      background-color: whitesmoke;
+      transition: all 0.2s;
+    }
+    .menuButton {
+      display: block;
+      position: absolute;
+      top: 14px;
+      left: 12px;
+      img {
+        width: 22px;
+      }
+    }
+    .content:not(.displayed) {
+      opacity: 0;
+      visibility: hidden;
+      * {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transition: all 0.2s;
+      }
+    }
+    .content.displayed {
+      opacity: 1;
+      visibility: visible;
+      align-items: flex-start;
+      justify-content: flex-start;
+      > div {
+        height: fit-content;
+        margin: 0;
+        padding: 0;
+        button {
+          border-radius: 0px;
+          width: 130px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+        }
+        > div {
+          top: 0px;
+          width: calc(100vw - 130px);
+          height: 100%;
+          overflow: auto;
+          > div > div > div {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    .mainIcon{
+      top: 13px !important;
+      img{
+        height: 24px !important;
+      }
+    }
+    > div {
+      .white {
+        display: none !important;
+      }
+      .green {
+        top: 11px !important;
+        height: 28px !important;
+        font-size: 12px !important;
+        padding: 2px 4px !important;
+      }
+      .search{
+        top: 15px !important;
+      }
+    }
+  }
+}
