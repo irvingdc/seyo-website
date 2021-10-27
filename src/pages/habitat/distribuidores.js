@@ -5,27 +5,40 @@ import Layout from "components/Layout/Layout"
 import { navigate } from "gatsby-link"
 
 export default () => {
+  let [loading, setLoading] = useState(false)
+
   let storeEmail = e => {
     if (typeof window === "undefined") {
       return
     }
-    window.localStorage.habitatEmail = e.target.value
+    window.localStorage.habitatEmailBuenFin = e.target.value
   }
 
   const handleSubmit = event => {
     event.preventDefault()
+    if (loading) {
+      return
+    }
     let formData = new FormData(event.target)
     formData.append("form-name", event.target.getAttribute("name"))
     let body = new URLSearchParams(formData).toString()
     console.log("formData", formData)
 
+    setLoading(true)
+    setTimeout(() => sendInfo(body), 3000)
+  }
+
+  let sendInfo = body => {
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body,
     })
-      .then(() => navigate("/mensaje-enviado/"))
+      .then(() => navigate("/ruleta/"))
       .catch(error => alert(error))
+      .finally(() => {
+        setLoading(false)
+      })
   }
 
   return (
@@ -103,7 +116,19 @@ export default () => {
               </select>
             </div>
             <div className={classes.button}>
-              <button className="small-button-blue-pill">ENVIAR</button>
+              {loading ? (
+                <p
+                  style={{
+                    fontSize: "24px",
+                    textAlign: "center",
+                    color: "#0c8fc7 !important",
+                  }}
+                >
+                  Enviando...
+                </p>
+              ) : (
+                <button className="small-button-blue-pill">ENVIAR</button>
+              )}
             </div>
           </form>
         </div>
