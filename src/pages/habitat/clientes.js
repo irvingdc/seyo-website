@@ -25,7 +25,7 @@ export default () => {
     let body = new URLSearchParams(formData).toString()
     console.log("formData", formData)
     setLoading(true)
-    setTimeout(() => sendInfo(body), 3000)
+    setTimeout(() => sendInfo(body), 300)
   }
 
   let sendInfo = body => {
@@ -80,7 +80,7 @@ export default () => {
             </div>
             <div>
               <label htmlFor="Telefono">Teléfono de contacto:</label>
-              <input type="number" name="Telefono" id="Telefono" />
+              <input type="number" name="Telefono" id="Telefono" required />
             </div>
             <div>
               <label htmlFor="Producto de interes">Producto de interés:</label>

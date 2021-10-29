@@ -25,7 +25,7 @@ export default () => {
     console.log("formData", formData)
 
     setLoading(true)
-    setTimeout(() => sendInfo(body), 3000)
+    setTimeout(() => sendInfo(body), 300)
   }
 
   let sendInfo = body => {
@@ -92,7 +92,7 @@ export default () => {
             </div>
             <div>
               <label htmlFor="Telefono">Teléfono:</label>
-              <input type="number" name="Telefono" id="Telefono" />
+              <input type="number" name="Telefono" id="Telefono" required />
             </div>
             <div>
               <label htmlFor="Nombre de la empresa">
