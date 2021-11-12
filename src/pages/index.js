@@ -14,9 +14,8 @@ import classes from "stylesheets/index.module.less"
 import { getPriceString } from "utils/functions"
 import { Link } from "gatsby"
 import { addToCart } from "components/Cart/Cart"
-import banner from "images/banners/mist.jpg"
+import banner from "images/banners/buenfin2.jpg"
 import Modal from "react-bootstrap/Modal"
-
 
 export const useLocalStorage = (key, defaultValue) => {
   const stored =
@@ -32,8 +31,7 @@ export const useLocalStorage = (key, defaultValue) => {
 }
 
 const IndexPage = () => {
-
-  let [hidden, setHidden] = useLocalStorage("modal.mist.hidden", false)
+  let [hidden, setHidden] = useState(false)
 
   return (
     <Layout
@@ -48,9 +46,7 @@ const IndexPage = () => {
           dialogClassName={classes.modalClass}
         >
           <Modal.Body>
-            <Link to="/cerraduras/mist21/">
-              <img src={banner} alt="buen fin" />
-            </Link>
+            <img src={banner} alt="buen fin" />
           </Modal.Body>
         </Modal>
         <Carousel
@@ -103,7 +99,7 @@ const IndexPage = () => {
           <img src={locks_all} alt="Nuestras Cerraduras" />
         </Link>
       </div>
-      <HomeKits/>
+      <HomeKits />
       <HomeLocks />
       <LockBanner
         img={otros_productos}
