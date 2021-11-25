@@ -95,7 +95,7 @@ export default () => (
           img={freya}
           title="FREYA21"
           price={getPriceString("FREYA21")}
-          methods={["wifi", "app", "codigo", "llave", "tarjeta"]}
+          methods={["huella","wifi", "app", "codigo", "llave", "tarjeta"]}
         />
         <LockCard
           link="/cerraduras/ull20"
