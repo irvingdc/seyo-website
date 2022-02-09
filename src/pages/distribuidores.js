@@ -258,7 +258,7 @@ export default () => (
               <b>Contacto: </b>Cristina Fausto.<br />
               <b>Dirección: </b> Plaza Lago Juriquilla. Lago Cuitzeo 319 Loc. 8, Cumbres de lago Juriquilla, Queretaro. Qro. C.P. 76230.
               <br />
-              <b>Teléfono:</b> 7222155168 <br />
+              <b>Teléfono: </b> 4422245544<br />
               <b>Correo Electrónico: </b>contacto@cerraduradigital.com.mx<br />
               <b>Horario de Atención: </b> L-V 09:00 a.m. A 18:00 p.m. Sábado de 09:00 a.m. a 16:00 p.m. Domingo de 09:00 a.m. a 13:00 p.m.
               <br />
